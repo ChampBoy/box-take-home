@@ -13,7 +13,8 @@ public class Driver
 //        initialPieces.add(new Utils.InitialPosition("K","e4"));
 //        initialPieces.add(new Utils.InitialPosition("s","a2"));
 //        Utils.TestCase tc = new Utils.TestCase(initialPieces,upperCaptures,lowerCaptures,moves);
-        Utils.TestCase temp = Utils.parseTestCase("/Users/ILYASPARAWALA/Desktop/UMN Stuff/box-take-home/test/BoxShogi Test Cases/basicCheck.in");
+        Utils.TestCase temp = Utils.parseTestCase("/home/paraw001/Desktop/box-take-home/test/BoxShogi Test Cases/basicCheck.in");
+        Cell c = new Cell(0,1);
 
         System.out.println(temp.toString());
     }

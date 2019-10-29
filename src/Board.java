@@ -7,8 +7,9 @@ public class Board {
 
     final int BOARD_SIZE = 5;
 
-    public Board() {
-    	//TODO initialize variable board here
+    public Board()
+    {
+        board=new Piece[BOARD_SIZE][BOARD_SIZE];
     }
 
     /* Print board */
@@ -23,7 +24,7 @@ public class Board {
         return stringifyBoard(pieces);
     }
 
-    private boolean isOccupied(int col, int row) {
+    public boolean isOccupied(int col, int row) {
         return board[col][row] != null;
     }
 
@@ -55,6 +56,18 @@ public class Board {
         }
 
         throw new IllegalArgumentException("Board must be an array of strings like \"\", \"P\", or \"+P\"");
+    }
+    public boolean isOnMap(int x,int y)
+    {
+        return x >= 0 && y >= 0 && x < BOARD_SIZE && y < BOARD_SIZE;
+    }
+    public Piece getPiece(int x ,int y)
+    {
+        return this.board[x][y];
+    }
+    public void setPiece(int x,int y,Piece place)
+    {
+        this.board[x][y]=place;
     }
 }
 
