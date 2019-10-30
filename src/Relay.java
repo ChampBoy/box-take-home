@@ -47,12 +47,14 @@ public class Relay extends Piece
                     {
                         Position move_loc = new Position(x,y);
                         moves.add(move_loc);
+                        System.out.println("Possible move = ("+x+","+y+")");
                     }
                 }
                 else //Not occupied
                 {
                     Position move_loc = new Position(x,y);
                     moves.add(move_loc);
+                    System.out.println("Possible move = ("+x+","+y+")");
                 }
 
             }
