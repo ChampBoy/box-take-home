@@ -6,7 +6,7 @@ public class Position
     public Position(char x ,int y)
     {
         this.x=x;
-        this.y=y;
+        this.y=y-1;
         if(x=='a')
         {
             x_int=0;
@@ -32,7 +32,7 @@ public class Position
             System.out.println("Illegal Move");
         }
     }
-    public Position(int x,int y)
+    public Position(int x,int y) //not to be used by user as no -1 here
     {
         this.y=y;
         this.x_int=x;
@@ -58,5 +58,9 @@ public class Position
         }
         Position p = (Position) o;
         return (x_int==p.getX() && y==p.getY());
+    }
+    public String toString()
+    {
+        return "("+x_int+","+y+")";
     }
 }

@@ -18,7 +18,6 @@ public class Drive extends Piece
                 return true;
             }
         }
-
         System.out.println("Illegal Move,printing from inside drive piece");
         return false;
 
@@ -40,6 +39,11 @@ public class Drive extends Piece
                         Position move_loc = new Position(x,y);
                         moves.add(move_loc);
                     }
+                }
+                else //Not occupied
+                {
+                    Position move_loc = new Position(x,y);
+                    moves.add(move_loc);
                 }
 
             }

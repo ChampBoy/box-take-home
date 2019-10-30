@@ -57,17 +57,17 @@ public class Board {
 
         throw new IllegalArgumentException("Board must be an array of strings like \"\", \"P\", or \"+P\"");
     }
-    public boolean isOnMap(int x,int y)
+    public boolean isOnMap(int x_board,int y_board)
     {
-        return x >= 0 && y >= 0 && x < BOARD_SIZE && y < BOARD_SIZE;
+        return x_board >= 0 && y_board >= 0 && x_board < BOARD_SIZE && y_board < BOARD_SIZE;
     }
     public Piece getPiece(int x ,int y)
     {
         return this.board[x][y];
     }
-    public void setPiece(int x,int y,Piece place)
+    public void setPiece(Position p , Piece place)
     {
-        this.board[x][y]=place;
+        this.board[p.getX()][p.getY()]=place; //y starts from 1 not 0
     }
 }
 
