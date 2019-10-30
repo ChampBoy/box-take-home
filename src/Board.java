@@ -69,5 +69,9 @@ public class Board {
     {
         this.board[p.getX()][p.getY()]=place; //y starts from 1 not 0
     }
+    public void removePiece(Position p)
+    {
+        this.board[p.getX()][p.getY()]=null;
+    }
 }
 
