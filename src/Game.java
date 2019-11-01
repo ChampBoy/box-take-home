@@ -52,6 +52,11 @@ public class Game
 
             String input="";
             input=sc.nextLine();
+            if(input.equals(" "))
+            {
+                this.end_game_for_current_player();
+                return;
+            }
             String[] split = input.split(" ");
             if(split[0].equals("move"))
             {
@@ -68,6 +73,10 @@ public class Game
         String final_position=split[2];
         Position initial_p = new Position(initial_position.charAt(0),Character.getNumericValue(initial_position.charAt(1)));
         Position final_p = new Position(final_position.charAt(0),Character.getNumericValue(final_position.charAt(1)));
+        System.out.print("Start position  ");
+        System.out.println(initial_position);
+        System.out.print("End Position    ");
+        System.out.println(final_position);
         if(!board.isOnMap(initial_p) || !board.isOnMap(final_p))
         {
             this.end_game_for_current_player();
@@ -107,6 +116,15 @@ public class Game
                 board.setPiece(final_p,current_piece);
             }
             //if this move caused check then IT IS ILLEGAL AND GAME OVER
+
+
+            this.moves++;
+            this.current_player_move=get_other_player(this.current_player_move);
+            if(moves==200)
+            {
+                System.out.println("Tie game. Too many moves.");
+                this.setOver();
+            }
         }
         else //illegal move
         {

@@ -16,7 +16,11 @@ public class Governance extends Piece
         int temp_y=y-1;
         while(temp_x<5 && temp_y>=0)
         {
-            add_move(board,temp_x,temp_y);
+            boolean obstruction=add_move(board,temp_x,temp_y);
+            if(obstruction)
+            {
+                break;
+            }
             temp_x++;
             temp_y--;
         }
@@ -24,7 +28,11 @@ public class Governance extends Piece
         temp_y=y+1;
         while(temp_x>=0 && temp_y<5)
         {
-            add_move(board,temp_x,temp_y);
+            boolean obstruction=add_move(board,temp_x,temp_y);
+            if(obstruction)
+            {
+                break;
+            }
             temp_x--;
             temp_y++;
         }
@@ -32,7 +40,11 @@ public class Governance extends Piece
         temp_y=y-1;
         while(temp_x>=0 && temp_y>=0)
         {
-            add_move(board,temp_x,temp_y);
+            boolean obstruction=add_move(board,temp_x,temp_y);
+            if(obstruction)
+            {
+                break;
+            }
             temp_x--;
             temp_y--;
         }
@@ -40,7 +52,11 @@ public class Governance extends Piece
         temp_y=y+1;
         while(temp_x<5 && temp_y<5)
         {
-            add_move(board,temp_x,temp_y);
+            boolean obstruction=add_move(board,temp_x,temp_y);
+            if(obstruction)
+            {
+                break;
+            }
             temp_x++;
             temp_y++;
         }
@@ -57,15 +73,15 @@ public class Governance extends Piece
                 return true;
             }
         }
-        System.out.println("Illegal Move,printing from inside Notes piece");
+        System.out.println("Illegal Move,printing from inside Governance piece");
         return false;
 
     }
-    public void add_move(Board board,int x ,int y)
+    public boolean add_move(Board board,int x ,int y)
     {
         if(!board.isOnMap(x,y))
         {
-            return ;
+            return false;
         }
         if(board.isOccupied(x,y))
         {
@@ -74,16 +90,15 @@ public class Governance extends Piece
             {
                 Position move_loc = new Position(x,y);
                 moves.add(move_loc);
-                System.out.print("Possible move = ");
-                System.out.println(move_loc);
+                return true;
             }
         }
         else
         {
             Position move_loc = new Position(x,y);
             moves.add(move_loc);
-            System.out.print("Possible move = ");
-            System.out.println(move_loc);
+            return false;
         }
+        return false;
     }
 }

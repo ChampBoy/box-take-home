@@ -98,5 +98,21 @@ public class Board {
     {
         return this.board[p.getX()][p.getY()];
     }
+//    public boolean containsEnemyPiece(Position p,Piece current_piece)
+//    {
+//        if(this.isOccupied(p))
+//        {
+//            Piece end_piece = this.getPiece(p);
+//            if(current_piece.isLower() && end_piece.isUpper())
+//            {
+//                return true;
+//            }
+//            else if(current_piece.isUpper() && end_piece.isLower())
+//            {
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
 }
 

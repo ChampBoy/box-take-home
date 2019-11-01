@@ -29,33 +29,53 @@ public class Notes extends Piece
         int temp_x = x-1;
         while(temp_x>=0)
         {
-            add_move(board,temp_x,y);
+            boolean obstruction = add_move(board,temp_x,y);
+            if(obstruction)
+            {
+                break;
+            }
             temp_x--;
         }
         temp_x=x+1;
         while(temp_x<5)
         {
-            add_move(board,temp_x,y);
+            boolean obstruction = add_move(board,temp_x,y);
+            if(obstruction)
+            {
+                break;
+            }
             temp_x++;
         }
         int temp_y=y-1;
         while(temp_y>=0)
         {
-            add_move(board,x,temp_y);
+            boolean obstruction = add_move(board,x,temp_y);
+            if(obstruction)
+            {
+                break;
+            }
             temp_y--;
         }
         temp_y=y+1;
         while(temp_y<5)
         {
-            add_move(board,x,temp_y);
+            boolean obstruction = add_move(board,x,temp_y);
+            if(obstruction)
+            {
+                break;
+            }
             temp_y++;
         }
     }
-    public void add_move(Board board,int x ,int y)
+    public boolean add_move(Board board,int x ,int y)
     {
+
+        Position move_loc1 = new Position(x,y);
+        System.out.println(move_loc1);
+
         if(!board.isOnMap(x,y))
         {
-            return ;
+            return false;
         }
         if(board.isOccupied(x,y))
         {
@@ -64,18 +84,16 @@ public class Notes extends Piece
             {
                 Position move_loc = new Position(x,y);
                 moves.add(move_loc);
-                System.out.print("Possible move = ");
-                System.out.println(move_loc);
+                return true;
             }
         }
         else
         {
             Position move_loc = new Position(x,y);
             moves.add(move_loc);
-            System.out.print("Possible move = ");
-            System.out.println(move_loc);
+            return false;
         }
+        return false;
     }
-
 
 }
