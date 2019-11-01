@@ -34,6 +34,19 @@ public class Player
     {
         captured.remove(p);
     }
+    public void print_win_message(String reason)
+    {
+        System.out.println(this.name+" players wins."+reason);
+    }
+    public void print_captured_list()
+    {
+        System.out.print("Captures "+this.name+": ");
+        for(Piece p : captured)
+        {
+            System.out.print(p+" "); //Remember to change case of captured while adding to this list
+        }
+        System.out.println("");
+    }
 
 
 

@@ -2,7 +2,7 @@ public abstract class Piece
 {
     private String name;
     private boolean isPromoted;
-    private boolean isCaptured;
+    private boolean isCaptured; //see if u use this
     public Piece(String name)
     {
         this.name=name; //CHECK FOR ILLEGAL PIECE NAME ADDED
@@ -37,6 +37,32 @@ public abstract class Piece
         this.isPromoted=true;
     }
     public abstract boolean canMove(Board board , Position start ,Position end);
+    public boolean belongsTo(Player pl)
+    {
+        if(pl.getName().equals("upper") && this.isUpper())
+        {
+            return true;
+        }
+        else if (pl.getName().equals("lower") && this.isLower())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
 
+    }
+    public void change_teams()
+    {
+        if(isLower())
+        {
+            this.name=String.valueOf(Character.toUpperCase(this.name.charAt(0)));
+        }
+        else
+        {
+            this.name=String.valueOf(Character.toLowerCase(this.name.charAt(0)));
+        }
+    }
 
 }

@@ -40,6 +40,10 @@ public class Board {
     public boolean isOccupied(int col, int row) {
         return board[col][row] != null;
     }
+    public boolean isOccupied(Position p)
+    {
+        return board[p.getX()][p.getY()]!=null;
+    }
 
     private String stringifyBoard(String[][] board) {
         String str = "";
@@ -74,6 +78,10 @@ public class Board {
     {
         return x_board >= 0 && y_board >= 0 && x_board < BOARD_SIZE && y_board < BOARD_SIZE;
     }
+    public boolean isOnMap(Position p)
+    {
+        return isOnMap(p.getX(),p.getY());
+    }
     public Piece getPiece(int x ,int y)
     {
         return this.board[x][y];
@@ -85,6 +93,10 @@ public class Board {
     public void removePiece(Position p)
     {
         this.board[p.getX()][p.getY()]=null;
+    }
+    public Piece getPiece(Position p)
+    {
+        return this.board[p.getX()][p.getY()];
     }
 }
 
