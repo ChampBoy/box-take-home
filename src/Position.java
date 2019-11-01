@@ -32,10 +32,33 @@ public class Position
             System.out.println("Illegal Move");
         }
     }
-    public Position(int x,int y) //not to be used by user as no -1 here
+    public Position(int x,int y)
     {
         this.y=y;
         this.x_int=x;
+        char c=' ';
+        if(x_int==0)
+        {
+            c='a';
+        }
+        else if(x_int==1)
+        {
+            c='b';
+        }
+        else if(x_int==2)
+        {
+            c='c';
+        }
+        else if(x_int==3)
+        {
+            c='d';
+        }
+        else if(x_int==4)
+        {
+            c='e';
+        }
+        this.x=c;
+
     }
     public int getX()
     {
@@ -61,6 +84,8 @@ public class Position
     }
     public String toString()
     {
-        return "("+x_int+","+y+")";
+        String s="";
+
+        return "("+x+","+(y+1)+")";
     }
 }

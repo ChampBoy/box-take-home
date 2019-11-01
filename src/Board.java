@@ -9,7 +9,20 @@ public class Board {
 
     public Board()
     {
+
         board=new Piece[BOARD_SIZE][BOARD_SIZE];
+        this.setPiece(new Position('a',1),new Drive("d"));
+        this.setPiece(new Position('e',1),new Notes("n"));
+        this.setPiece(new Position('d',1),new Governance("g"));
+        this.setPiece(new Position('b',1),new Shield("s"));
+        this.setPiece(new Position('c',1),new Relay("r"));
+        this.setPiece(new Position('a',2),new Preview("p"));
+        this.setPiece(new Position('e',5),new Drive("D"));
+        this.setPiece(new Position('a',5),new Notes("N"));
+        this.setPiece(new Position('b',5),new Governance("G"));
+        this.setPiece(new Position('d',5),new Shield("S"));
+        this.setPiece(new Position('c',5),new Relay("R"));
+        this.setPiece(new Position('e',4),new Preview("P"));
     }
 
     /* Print board */

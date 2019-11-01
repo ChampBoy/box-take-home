@@ -37,13 +37,16 @@ public class Drive extends Piece
                     if(!((this.isLower() && end_piece.isLower())|| (this.isUpper() && end_piece.isUpper())))
                     {
                         Position move_loc = new Position(x,y);
-                        moves.add(move_loc);
+                        System.out.print("Possible move = ");
+                        System.out.println(move_loc);
                     }
                 }
                 else //Not occupied
                 {
                     Position move_loc = new Position(x,y);
                     moves.add(move_loc);
+                    System.out.print("Possible move = ");
+                    System.out.println(move_loc);
                 }
 
             }

@@ -38,4 +38,5 @@ public abstract class Piece
     }
     public abstract boolean canMove(Board board , Position start ,Position end);
 
+
 }

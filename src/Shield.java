@@ -47,12 +47,16 @@ public class Shield extends Piece
                     {
                         Position move_loc = new Position(x,y);
                         moves.add(move_loc);
+                        System.out.print("Possible move = ");
+                        System.out.println(move_loc);
                     }
                 }
                 else //Not occupied
                 {
                     Position move_loc = new Position(x,y);
                     moves.add(move_loc);
+                    System.out.print("Possible move = ");
+                    System.out.println(move_loc);
                 }
 
             }

@@ -13,7 +13,7 @@ public class Governance extends Piece
         int x =start.getX();
         int y =start.getY();
         int temp_x=x+1;
-        int temp_y=y+1;
+        int temp_y=y-1;
         while(temp_x<5 && temp_y>=0)
         {
             add_move(board,temp_x,temp_y);
@@ -74,12 +74,16 @@ public class Governance extends Piece
             {
                 Position move_loc = new Position(x,y);
                 moves.add(move_loc);
+                System.out.print("Possible move = ");
+                System.out.println(move_loc);
             }
         }
         else
         {
             Position move_loc = new Position(x,y);
             moves.add(move_loc);
+            System.out.print("Possible move = ");
+            System.out.println(move_loc);
         }
     }
 }
