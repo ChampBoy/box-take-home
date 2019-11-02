@@ -60,6 +60,10 @@ public class Position
         this.x=c;
 
     }
+    public Position(String s)
+    {
+        this(s.charAt(0),Character.getNumericValue(s.charAt(1)));
+    }
     public int getX()
     {
         return this.x_int;

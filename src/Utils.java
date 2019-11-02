@@ -86,4 +86,78 @@ public class Utils {
 
         return new TestCase(initialPieces, upperCaptures, lowerCaptures, moves);
     }
+    public static Piece create_piece(String s)
+    {
+        char c1=' ';
+        char c2=' ';
+        Piece p;
+        if(s.length()==2) //if piece is promoted
+        {
+            c1=s.charAt(1);
+            c2=s.charAt(0);
+        }
+        else if(s.length()==1)
+        {
+            c1=s.charAt(0);
+        }
+
+        if(Character.isLowerCase(c1))
+        {
+            switch(c1)
+            {
+                case 'd':
+                    p=new Drive("d"); //remember to set drive
+                    break;
+                case 'p':
+                    p=new Preview("p");
+                    break;
+                case 's':
+                    p=new Shield("s");
+                    break;
+                case 'r':
+                    p=new Relay("r");
+                    break;
+                case 'g':
+                    p=new Governance("g");
+                    break;
+                case 'n':
+                    p=new Notes("n");
+                    break;
+                default:
+                    return null;
+            }
+        }
+        else
+        {
+            switch(c1)
+            {
+                case 'D':
+                    p=new Drive("D"); //remember to set drive
+                    break;
+                case 'P':
+                    p=new Preview("P");
+                    break;
+                case 'S':
+                    p=new Shield("S");
+                    break;
+                case 'R':
+                    p=new Relay("R");
+                    break;
+                case 'G':
+                    p=new Governance("G");
+                    break;
+                case 'N':
+                    p=new Notes("N");
+                    break;
+                default:
+                    return null;
+            }
+        }
+        if(c2!=' ')
+        {
+            p.Promote();
+        }
+
+        return p;
+    }
 }

@@ -13,7 +13,6 @@ public class Game
 
     public Game(boolean interactive,String file_path)
     {
-        this.board = new Board();
         this.moves=0;
         this.isOver=false;
         this.lower=new Player("lower");
@@ -22,11 +21,13 @@ public class Game
         this.interactive=interactive;
         if(interactive)
         {
+            this.board = new Board(true);
             sc=new Scanner(System.in);
             this.run_game_interactive();
         }
         else
         {
+            this.board = new Board();
             this.file_path=file_path;
             this.run_game_file_mode(file_path);
         }
@@ -64,6 +65,13 @@ public class Game
                 //continue from here
             }
             //change player turns and increment move counter,also if move counter 200 then end
+            this.moves++;
+            this.current_player_move=get_other_player(this.current_player_move);
+            if(moves==200)
+            {
+                System.out.println("Tie game. Too many moves.");
+                this.setOver();
+            }
         }
     }
 
@@ -118,13 +126,7 @@ public class Game
             //if this move caused check then IT IS ILLEGAL AND GAME OVER
 
 
-            this.moves++;
-            this.current_player_move=get_other_player(this.current_player_move);
-            if(moves==200)
-            {
-                System.out.println("Tie game. Too many moves.");
-                this.setOver();
-            }
+
         }
         else //illegal move
         {
@@ -135,7 +137,55 @@ public class Game
 
     public void run_game_file_mode(String path)
     {
-        return; //Implement later
+        try
+        {
+            Utils.TestCase temp = Utils.parseTestCase(path);
+            for(Utils.InitialPosition ipiece: temp.initialPieces) //filling initial positions from file
+            {
+
+                Piece p =Utils.create_piece(ipiece.piece);
+                Position pos =new Position(ipiece.position);
+                board.setPiece(pos,p);
+            }
+            System.out.println(board);
+            for(String upper_captured : temp.upperCaptures) //filling provided upper captures
+            {
+                if(upper_captured.equals(""))
+                {
+                    break;
+                }
+                Piece p =Utils.create_piece(upper_captured);
+                upper.capturePiece(p);
+            }
+            for(String lower_captured : temp.lowerCaptures)
+            {
+                if(lower_captured.equals(""))
+                {
+                    break;
+                }
+                Piece p =Utils.create_piece(lower_captured);
+                lower.capturePiece(p);
+            }
+            for(String move : temp.moves)
+            {
+                String[] split = move.split(" ");
+                if(split[0].equals("move"))
+                {
+                    make_move(split);
+                    //continue from here
+                }
+            }
+            System.out.println(board);
+
+        }
+        catch(Exception e)
+        {
+            System.out.println("Error with opening filepath");
+        }
+
+
+
+
     }
     public Player get_other_player(Player pl)
     {

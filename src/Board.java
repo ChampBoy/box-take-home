@@ -7,7 +7,7 @@ public class Board {
 
     final int BOARD_SIZE = 5;
 
-    public Board()
+    public Board(boolean initialized)
     {
 
         board=new Piece[BOARD_SIZE][BOARD_SIZE];
@@ -23,6 +23,10 @@ public class Board {
         this.setPiece(new Position('d',5),new Shield("S"));
         this.setPiece(new Position('c',5),new Relay("R"));
         this.setPiece(new Position('e',4),new Preview("P"));
+    }
+    public Board()
+    {
+        board=new Piece[BOARD_SIZE][BOARD_SIZE];
     }
 
     /* Print board */

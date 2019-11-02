@@ -35,6 +35,7 @@ public abstract class Piece
     public void Promote()
     {
         this.isPromoted=true;
+        this.name+="+";
     }
     public abstract boolean canMove(Board board , Position start ,Position end);
     public boolean belongsTo(Player pl)
