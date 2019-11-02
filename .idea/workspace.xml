@@ -2,137 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="733a7f8f-a63f-4f6a-8169-045762bb976f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test-runner-linux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/box-take-home/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/box-take-home/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/box-take-home/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/box-take-home/Driver.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/box-take-home/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/box-take-home/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/box-take-home/Governance.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/box-take-home/Governance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/box-take-home/Notes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/box-take-home/Notes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/box-take-home/Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/box-take-home/Piece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/box-take-home/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/box-take-home/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/box-take-home/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/box-take-home/Utils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/box-take-home/Preview.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/box-take-home/Preview.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/box-take-home/Relay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/box-take-home/Relay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/box-take-home/Shield.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/box-take-home/Shield.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Governance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Governance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Notes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Notes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/basicCheck.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/basicCheck.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/basicCheck.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/basicCheck.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/blockOutOfCheck.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/blockOutOfCheck.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/blockOutOfCheck.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/blockOutOfCheck.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/capture.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/capture.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/captureAndPromote.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/captureAndPromote.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/captureAndPromote.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/captureAndPromote.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/captureDrop.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/captureDrop.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/captureDrop.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/captureDrop.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/captureOutOfCheck.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/captureOutOfCheck.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/captureOutOfCheck.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/captureOutOfCheck.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/checkmate.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/checkmate.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/checkmate.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/checkmate.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/doubleCheck.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/doubleCheck.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/doubleCheck.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/doubleCheck.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/doublePreviewDrop.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/doublePreviewDrop.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/doublePreviewDrop.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/doublePreviewDrop.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/driveIllegalMove.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/driveIllegalMove.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/driveIllegalMove.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/driveIllegalMove.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/driveMoves.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/driveMoves.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/driveMoves.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/driveMoves.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/drivePromotion.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/drivePromotion.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/drivePromotion.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/drivePromotion.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/drop.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/drop.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/drop.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/drop.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/dropEmptyHand.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/dropEmptyHand.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/dropEmptyHand.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/dropEmptyHand.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/dropOpponentsPiece.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/dropOpponentsPiece.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/dropOpponentsPiece.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/dropOpponentsPiece.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/dropOutOfCheck.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/dropOutOfCheck.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/dropOutOfCheck.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/dropOutOfCheck.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/dropWrongPiece.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/dropWrongPiece.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/dropWrongPiece.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/dropWrongPiece.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/forcedPreviewPromotion.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/forcedPreviewPromotion.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/forcedPreviewPromotion.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/forcedPreviewPromotion.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/governanceIllegalMove.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/governanceIllegalMove.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/governanceIllegalMove.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/governanceIllegalMove.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/governanceMoves.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/governanceMoves.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/governanceMoves.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/governanceMoves.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/governancePromotion.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/governancePromotion.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/governancePromotion.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/governancePromotion.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/immediatePreviewDropMate.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/immediatePreviewDropMate.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/immediatePreviewDropMate.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/immediatePreviewDropMate.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/initialMove.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/initialMove.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/initialMove.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/initialMove.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/initialResponse.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/initialResponse.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/initialResponse.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/initialResponse.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/loseOnLastMove.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/loseOnLastMove.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/loseOnLastMove.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/loseOnLastMove.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/lowerIllegalPromotion.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/lowerIllegalPromotion.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/lowerIllegalPromotion.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/lowerIllegalPromotion.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/lowerStuckPreviewDrop.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/lowerStuckPreviewDrop.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/lowerStuckPreviewDrop.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/lowerStuckPreviewDrop.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/manyWaysOutOfCheck.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/manyWaysOutOfCheck.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/manyWaysOutOfCheck.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/manyWaysOutOfCheck.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/mateWithDrop.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/mateWithDrop.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/mateWithDrop.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/mateWithDrop.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/moveOutOfCheck.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/moveOutOfCheck.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/moveOutOfCheck.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/moveOutOfCheck.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/movingIntoCheck.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/movingIntoCheck.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/movingIntoCheck.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/movingIntoCheck.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/notesIllegalMove.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/notesIllegalMove.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/notesIllegalMove.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/notesIllegalMove.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/notesMoves.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/notesMoves.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/notesMoves.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/notesMoves.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/notesPromotion.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/notesPromotion.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/notesPromotion.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/notesPromotion.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/occupiedDrop.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/occupiedDrop.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/occupiedDrop.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/occupiedDrop.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/previewIllegalMove.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/previewIllegalMove.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/previewIllegalMove.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/previewIllegalMove.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/previewPromotion.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/previewPromotion.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/previewPromotion.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/previewPromotion.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promoteLeavingZone.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promoteLeavingZone.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promoteLeavingZone.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promoteLeavingZone.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promoteWithinZone.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promoteWithinZone.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promoteWithinZone.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promoteWithinZone.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promotedCaptureDrop.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promotedCaptureDrop.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promotedCaptureDrop.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promotedCaptureDrop.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promotedGovernanceIllegalMove.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promotedGovernanceIllegalMove.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promotedGovernanceIllegalMove.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promotedGovernanceIllegalMove.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promotedGovernanceMoves.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promotedGovernanceMoves.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promotedGovernanceMoves.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promotedGovernanceMoves.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promotedNotesIllegalMove.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promotedNotesIllegalMove.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promotedNotesIllegalMove.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promotedNotesIllegalMove.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promotedNotesMoves.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promotedNotesMoves.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promotedNotesMoves.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promotedNotesMoves.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promotedPreviewIllegalMove.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promotedPreviewIllegalMove.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promotedPreviewIllegalMove.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promotedPreviewIllegalMove.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promotedPreviewMoves.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promotedPreviewMoves.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promotedPreviewMoves.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promotedPreviewMoves.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promotedRelayIllegalMove.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promotedRelayIllegalMove.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promotedRelayIllegalMove.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promotedRelayIllegalMove.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promotedRelayMoves.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promotedRelayMoves.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promotedRelayMoves.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promotedRelayMoves.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promotedRelayPromotion.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promotedRelayPromotion.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/promotedRelayPromotion.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/promotedRelayPromotion.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/relayIllegalMove.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/relayIllegalMove.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/relayIllegalMove.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/relayIllegalMove.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/relayMoves.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/relayMoves.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/relayMoves.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/relayMoves.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/relayPromotion.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/relayPromotion.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/relayPromotion.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/relayPromotion.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/shieldIllegalMove.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/shieldIllegalMove.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/shieldIllegalMove.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/shieldIllegalMove.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/shieldMoves.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/shieldMoves.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/shieldMoves.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/shieldMoves.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/shieldPromotion.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/shieldPromotion.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/shieldPromotion.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/shieldPromotion.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/tieGame.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/tieGame.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/tieGame.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/tieGame.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/upperIllegalPromotion.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/upperIllegalPromotion.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/upperIllegalPromotion.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/upperIllegalPromotion.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/upperStuckPreviewDrop.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/upperStuckPreviewDrop.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/upperStuckPreviewDrop.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/upperStuckPreviewDrop.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/winOnLastMove.in" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/winOnLastMove.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoxShogi Test Cases/winOnLastMove.out" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoxShogi_Test_Cases/winOnLastMove.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Preview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Preview.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Relay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Relay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shield.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -156,41 +41,91 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="1" />
-          <entry key="in" value="6" />
-          <entry key="java" value="31" />
+          <entry key="class" value="2" />
+          <entry key="in" value="9" />
+          <entry key="java" value="44" />
           <entry key="md" value="1" />
-          <entry key="out" value="2" />
+          <entry key="out" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="31" />
-          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="CLASS" value="2" />
+          <entry key="JAVA" value="44" />
+          <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="13550" />
+          <entry key="java" value="14079" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="13550" />
+          <entry key="JAVA" value="14079" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.45460084">
+    <splitter split-orientation="horizontal" split-proportion="0.30490196">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Game.java">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/BoxShogi_Test_Cases/basicCheck.out">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="242">
-                  <caret line="145" column="44" selection-start-line="145" selection-start-column="44" selection-end-line="145" selection-end-column="44" />
+                <state relative-caret-position="240">
+                  <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/test/BoxShogi_Test_Cases/notesMoves.out">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="105">
+                  <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/BoxShogi_Test_Cases/initialMove.in">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="120">
+                  <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/BoxShogi_Test_Cases/initialMove.out">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Shield.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="765">
+                  <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Notes.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1455">
+                  <caret line="100" column="47" selection-start-line="100" selection-start-column="47" selection-end-line="100" selection-end-column="47" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Governance.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1170">
+                  <caret line="81" column="39" selection-start-line="81" selection-start-column="39" selection-end-line="81" selection-end-column="39" />
                 </state>
               </provider>
             </entry>
@@ -198,115 +133,137 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Utils.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="128" column="9" lean-forward="true" selection-start-line="128" selection-start-column="9" selection-end-line="128" selection-end-column="9" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Driver.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
-                  <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test/BoxShogi_Test_Cases/basicCheck.in">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
-                  <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-end-line="4" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Test.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="540">
-                  <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Relay.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="660">
-                  <caret line="50" column="74" selection-start-line="46" selection-start-column="20" selection-end-line="50" selection-end-column="74" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Position.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="660">
-                  <caret line="65" column="5" lean-forward="true" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
-                  <folding>
-                    <element signature="e#1050#1051#0" expanded="true" />
-                    <element signature="e#1122#1123#0" expanded="true" />
-                    <element signature="e#1149#1150#0" expanded="true" />
-                    <element signature="e#1182#1183#0" expanded="true" />
-                    <element signature="e#1210#1211#0" expanded="true" />
-                    <element signature="e#1239#1240#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Piece.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-                  <folding>
-                    <element signature="e#490#491#0" expanded="true" />
-                    <element signature="e#550#551#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Cell.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-                  <folding>
-                    <element signature="e#460#461#0" expanded="true" />
-                    <element signature="e#501#502#0" expanded="true" />
-                    <element signature="e#650#651#0" expanded="true" />
-                    <element signature="e#727#728#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Board.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
-                  <folding>
-                    <element signature="e#968#969#0" expanded="true" />
-                    <element signature="e#1023#1024#0" expanded="true" />
-                    <element signature="e#1516#1517#0" expanded="true" />
-                    <element signature="e#1570#1571#0" expanded="true" />
-                    <element signature="e#2640#2641#0" expanded="true" />
-                    <element signature="e#2689#2690#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
+        <splitter split-orientation="horizontal" split-proportion="0.5">
+          <split-first>
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Driver.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="315">
+                      <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/Game.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="634">
+                      <caret line="188" column="43" selection-start-line="188" selection-start-column="43" selection-end-line="188" selection-end-column="43" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Test.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="540">
+                      <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Drive.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="630">
+                      <caret line="42" column="17" lean-forward="true" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+                      <folding>
+                        <element signature="e#269#270#0" expanded="true" />
+                        <element signature="e#296#297#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Relay.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="660">
+                      <caret line="47" column="9" lean-forward="true" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Player.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="300">
+                      <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+                      <folding>
+                        <element signature="e#612#613#0" expanded="true" />
+                        <element signature="e#649#650#0" expanded="true" />
+                        <element signature="e#696#697#0" expanded="true" />
+                        <element signature="e#730#731#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Position.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="271">
+                      <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+                      <folding>
+                        <element signature="e#1050#1051#0" expanded="true" />
+                        <element signature="e#1122#1123#0" expanded="true" />
+                        <element signature="e#1149#1150#0" expanded="true" />
+                        <element signature="e#1182#1183#0" expanded="true" />
+                        <element signature="e#1210#1211#0" expanded="true" />
+                        <element signature="e#1239#1240#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/test/BoxShogi_Test_Cases/notesMoves.in">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="195">
+                      <caret line="13" column="10" lean-forward="true" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Board.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="420">
+                      <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+                      <folding>
+                        <element signature="e#968#969#0" expanded="true" />
+                        <element signature="e#1023#1024#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Piece.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="600">
+                      <caret line="51" column="35" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/Utils.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="1485">
+                      <caret line="157" selection-start-line="157" selection-end-line="157" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
       </split-second>
     </splitter>
   </component>
@@ -326,20 +283,20 @@
         <option value="$PROJECT_DIR$/src/Cell.java" />
         <option value="$PROJECT_DIR$/src/Move.java" />
         <option value="$PROJECT_DIR$/src/Bishop.java" />
-        <option value="$PROJECT_DIR$/src/Preview.java" />
-        <option value="$PROJECT_DIR$/src/Relay.java" />
-        <option value="$PROJECT_DIR$/src/Shield.java" />
         <option value="$PROJECT_DIR$/src/Player.java" />
-        <option value="$PROJECT_DIR$/src/Governance.java" />
-        <option value="$PROJECT_DIR$/src/Notes.java" />
         <option value="$PROJECT_DIR$/src/Drive.java" />
-        <option value="$PROJECT_DIR$/src/Piece.java" />
         <option value="$PROJECT_DIR$/src/Position.java" />
         <option value="$PROJECT_DIR$/src/Board.java" />
         <option value="$PROJECT_DIR$/src/Test.java" />
         <option value="$PROJECT_DIR$/src/Driver.java" />
-        <option value="$PROJECT_DIR$/src/Game.java" />
+        <option value="$PROJECT_DIR$/src/Governance.java" />
+        <option value="$PROJECT_DIR$/src/Preview.java" />
+        <option value="$PROJECT_DIR$/src/Piece.java" />
+        <option value="$PROJECT_DIR$/src/Notes.java" />
+        <option value="$PROJECT_DIR$/src/Relay.java" />
+        <option value="$PROJECT_DIR$/src/Shield.java" />
         <option value="$PROJECT_DIR$/src/Utils.java" />
+        <option value="$PROJECT_DIR$/src/Game.java" />
       </list>
     </option>
   </component>
@@ -347,7 +304,7 @@
     <option name="x" value="67" />
     <option name="y" value="25" />
     <option name="width" value="1687" />
-    <option name="height" value="1413" />
+    <option name="height" value="1415" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -372,12 +329,23 @@
               <item name="box-take-home" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="box-take-home" type="b2602c69:ProjectViewProjectNode" />
+              <item name="box-take-home" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="BoxShogi_Test_Cases" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
     </panes>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -395,7 +363,7 @@
     <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Driver" />
       <module name="box-take-home" />
-      <option name="PROGRAM_PARAMETERS" value="-f test/BoxShogi_Test_Cases/basicCheck.in" />
+      <option name="PROGRAM_PARAMETERS" value="-f test/BoxShogi_Test_Cases/notesMoves.in" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -433,23 +401,23 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1687" height="1413" extended-state="4" />
+    <frame x="67" y="25" width="3373" height="1415" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16270566" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16260895" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3289166" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32840466" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32969603" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3291829" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3289166" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -469,9 +437,6 @@
         <state relative-caret-position="-315" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/BoxShogi_Test_Cases/basicCheck.out">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/BoxShogi_Test_Cases/drop.out">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -482,13 +447,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Preview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/BoxShogi_Test_Cases/tieGame.in">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -496,47 +454,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Governance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="91" column="36" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/lang/StringLatin1.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-915">
           <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
-          <folding>
-            <element signature="e#968#969#0" expanded="true" />
-            <element signature="e#1023#1024#0" expanded="true" />
-            <element signature="e#1516#1517#0" expanded="true" />
-            <element signature="e#1570#1571#0" expanded="true" />
-            <element signature="e#2640#2641#0" expanded="true" />
-            <element signature="e#2689#2690#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Position.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="65" column="5" lean-forward="true" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
-          <folding>
-            <element signature="e#1050#1051#0" expanded="true" />
-            <element signature="e#1122#1123#0" expanded="true" />
-            <element signature="e#1149#1150#0" expanded="true" />
-            <element signature="e#1182#1183#0" expanded="true" />
-            <element signature="e#1210#1211#0" expanded="true" />
-            <element signature="e#1239#1240#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -553,42 +474,137 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Preview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="39" column="29" lean-forward="true" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/BoxShogi_Test_Cases/basicCheck.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/BoxShogi_Test_Cases/loseOnLastMove.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5374" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+          <folding>
+            <element signature="e#968#969#0" expanded="true" />
+            <element signature="e#1023#1024#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/BoxShogi_Test_Cases/initialMove.out">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Piece.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+        <state relative-caret-position="600">
+          <caret line="51" column="35" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
           <folding>
-            <element signature="e#490#491#0" expanded="true" />
-            <element signature="e#550#551#0" expanded="true" />
+            <element signature="e#612#613#0" expanded="true" />
+            <element signature="e#649#650#0" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
+            <element signature="e#730#731#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Position.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+          <folding>
+            <element signature="e#1050#1051#0" expanded="true" />
+            <element signature="e#1122#1123#0" expanded="true" />
+            <element signature="e#1149#1150#0" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
+            <element signature="e#1210#1211#0" expanded="true" />
+            <element signature="e#1239#1240#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Governance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="81" column="39" selection-start-line="81" selection-start-column="39" selection-end-line="81" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Notes.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Notes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1455">
+          <caret line="100" column="47" selection-start-line="100" selection-start-column="47" selection-end-line="100" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Shield.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Relay.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
-          <caret line="50" column="74" selection-start-line="46" selection-start-column="20" selection-end-line="50" selection-end-column="74" />
+          <caret line="47" column="9" lean-forward="true" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Shield.java">
+    <entry file="file://$PROJECT_DIR$/test/BoxShogi_Test_Cases/initialMove.in">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+        <state relative-caret-position="120">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Notes.java">
+    <entry file="file://$PROJECT_DIR$/test/BoxShogi_Test_Cases/notesMoves.in">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        <state relative-caret-position="195">
+          <caret line="13" column="10" lean-forward="true" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="157" selection-start-line="157" selection-end-line="157" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Drive.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="630">
+          <caret line="42" column="17" lean-forward="true" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
           <folding>
             <element signature="e#269#270#0" expanded="true" />
             <element signature="e#296#297#0" expanded="true" />
@@ -596,16 +612,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.java">
+    <entry file="file://$PROJECT_DIR$/test/BoxShogi_Test_Cases/basicCheck.out">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding>
-            <element signature="e#612#613#0" expanded="true" />
-            <element signature="e#649#650#0" expanded="true" />
-            <element signature="e#696#697#0" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/BoxShogi_Test_Cases/notesMoves.out">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -616,31 +633,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="145" column="44" selection-start-line="145" selection-start-column="44" selection-end-line="145" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/BoxShogi_Test_Cases/basicCheck.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="128" column="9" lean-forward="true" selection-start-line="128" selection-start-column="9" selection-end-line="128" selection-end-column="9" />
+        <state relative-caret-position="634">
+          <caret line="188" column="43" selection-start-line="188" selection-start-column="43" selection-end-line="188" selection-end-column="43" />
         </state>
       </provider>
     </entry>

@@ -14,11 +14,19 @@ public abstract class Piece
     }
     public boolean isLower()
     {
-        return Character.isLowerCase(name.charAt(0));
+        if(name.length()==1)
+        {
+            return Character.isLowerCase(name.charAt(0));
+        }
+        return Character.isLowerCase(name.charAt(1));
     }
     public boolean isUpper()
     {
-        return Character.isUpperCase(name.charAt(0));
+        if(name.length()==1)
+        {
+            return Character.isUpperCase(name.charAt(0));
+        }
+        return Character.isUpperCase(name.charAt(1));
     }
     public boolean isPromoted()
     {
@@ -34,13 +42,14 @@ public abstract class Piece
     }
     public void Promote()
     {
+        System.out.println("Promoting this piece");
         this.isPromoted=true;
-        this.name+="+";
+        this.name="+"+this.name;
     }
     public abstract boolean canMove(Board board , Position start ,Position end);
     public boolean belongsTo(Player pl)
     {
-        if(pl.getName().equals("upper") && this.isUpper())
+        if(pl.getName().equals("UPPER") && this.isUpper())
         {
             return true;
         }

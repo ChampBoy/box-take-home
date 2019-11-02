@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Governance extends Piece
 {
+    private static final int[][] promoted_locs = new int[][]{{0,-1},{1,0},{0,1},{-1,0}};
     private ArrayList<Position> moves = new ArrayList<>();
     public Governance(String name)
     {
@@ -59,6 +60,35 @@ public class Governance extends Piece
             }
             temp_x++;
             temp_y++;
+        }
+        if(isPromoted()) //extra moves if promoted
+        {
+            for(int i=0;i<promoted_locs.length;i++)
+            {
+                x= start.getX()+promoted_locs[i][0];
+                y= start.getY()+promoted_locs[i][1];
+                if(board.isOnMap(x,y))
+                {
+                    if(board.isOccupied(x,y))
+                    {
+                        Piece end_piece = board.getPiece(x,y);
+                        if(!((this.isLower() && end_piece.isLower())|| (this.isUpper() && end_piece.isUpper())))
+                        {
+                            Position move_loc = new Position(x,y);
+                            moves.add(move_loc);
+
+                        }
+                    }
+                    else //Not occupied
+                    {
+                        Position move_loc = new Position(x,y);
+                        moves.add(move_loc);
+
+                    }
+
+                }
+
+            }
         }
     }
 

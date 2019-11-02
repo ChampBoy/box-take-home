@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 public class Notes extends Piece
 {
+    private static final int[][] promoted_locs = new int[][]{{-1,-1},{1,-1},{1,1},{-1,1}};
     private ArrayList<Position> moves = new ArrayList<>();
     public Notes(String name)
     {
@@ -66,13 +67,38 @@ public class Notes extends Piece
             }
             temp_y++;
         }
+        if(isPromoted())
+        {
+            for(int i=0;i<promoted_locs.length;i++)
+            {
+                x= start.getX()+promoted_locs[i][0];
+                y= start.getY()+promoted_locs[i][1];
+                if(board.isOnMap(x,y))
+                {
+                    if(board.isOccupied(x,y))
+                    {
+                        Piece end_piece = board.getPiece(x,y);
+                        if(!((this.isLower() && end_piece.isLower())|| (this.isUpper() && end_piece.isUpper())))
+                        {
+                            Position move_loc = new Position(x,y);
+                            moves.add(move_loc);
+                        }
+                    }
+                    else //Not occupied
+                    {
+                        Position move_loc = new Position(x,y);
+                        moves.add(move_loc);
+
+                    }
+                }
+            }
+        }
+
     }
     public boolean add_move(Board board,int x ,int y)
     {
 
         Position move_loc1 = new Position(x,y);
-        System.out.println(move_loc1);
-
         if(!board.isOnMap(x,y))
         {
             return false;

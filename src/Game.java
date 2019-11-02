@@ -16,7 +16,7 @@ public class Game
         this.moves=0;
         this.isOver=false;
         this.lower=new Player("lower");
-        this.upper=new Player("upper");
+        this.upper=new Player("UPPER");
         this.current_player_move=lower;
         this.interactive=interactive;
         if(interactive)
@@ -81,23 +81,26 @@ public class Game
         String final_position=split[2];
         Position initial_p = new Position(initial_position.charAt(0),Character.getNumericValue(initial_position.charAt(1)));
         Position final_p = new Position(final_position.charAt(0),Character.getNumericValue(final_position.charAt(1)));
-        System.out.print("Start position  ");
-        System.out.println(initial_position);
-        System.out.print("End Position    ");
-        System.out.println(final_position);
+//        System.out.print("Start position  ");
+//        System.out.println(initial_position);
+//        System.out.print("End Position    ");
+//        System.out.println(final_position);
         if(!board.isOnMap(initial_p) || !board.isOnMap(final_p))
         {
+            System.out.println("Illegal outside map");
             this.end_game_for_current_player();
             return;
         }
         if(!board.isOccupied(initial_p)) //or end
         {
+            System.out.println("Illegal occupied by same player");
             this.end_game_for_current_player();
             return;
         }
         Piece current_piece = board.getPiece(initial_p);
         if(!current_piece.belongsTo(current_player_move)) //If piece to be moved does not belong to current player then illegal
         {
+            System.out.println("piece does not belong to current player");
             this.end_game_for_current_player();
             return;
         }
@@ -147,7 +150,6 @@ public class Game
                 Position pos =new Position(ipiece.position);
                 board.setPiece(pos,p);
             }
-            System.out.println(board);
             for(String upper_captured : temp.upperCaptures) //filling provided upper captures
             {
                 if(upper_captured.equals(""))
@@ -168,14 +170,27 @@ public class Game
             }
             for(String move : temp.moves)
             {
-                String[] split = move.split(" ");
-                if(split[0].equals("move"))
-                {
-                    make_move(split);
-                    //continue from here
+                if(!isOver) {
+                    String[] split = move.split(" ");
+                    if (split[0].equals("move")) {
+                        make_move(split);
+                        //continue from here
+                    }
+                    this.moves++;
+                    this.current_player_move = get_other_player(this.current_player_move);
+                    if (moves == 200) {
+                        System.out.println("Tie game. Too many moves.");
+                        this.setOver();
+                    }
+                    //move ends here
+
                 }
             }
-            System.out.println(board);
+            System.out.println(this.board);
+            upper.print_captured_list();
+            lower.print_captured_list();
+            System.out.println("");
+            System.out.println(current_player_move.getName()+">");
 
         }
         catch(Exception e)
@@ -189,7 +204,7 @@ public class Game
     }
     public Player get_other_player(Player pl)
     {
-        if (pl.getName().equals("upper"))
+        if (pl.getName().equals("UPPER"))
         {
             return this.lower;
         }

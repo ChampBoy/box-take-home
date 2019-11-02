@@ -4,6 +4,8 @@ public class Relay extends Piece
 {
     private static final int[][] lower_possibleLocations = new int[][]{{-1,-1},{1,-1},{1,1},{0,1},{-1,1}};
     private static final int[][] upper_possibleLocations = new int[][]{{1,-1},{1,1},{0,-1},{-1,1},{-1,-1}};
+    private static final int[][] promoted_lower = new int[][]{{0,-1},{1,0},{1,1},{0,1},{-1,1},{-1,0}};
+    private static final int[][] promoted_upper = new int[][]{{1,-1},{0,-1},{-1,-1},{1,0},{-1,0},{0,1}};
     private ArrayList<Position> moves = new ArrayList<>();
     public Relay(String name)
     {
@@ -26,13 +28,23 @@ public class Relay extends Piece
     {
         moves.clear(); //Clears moves that might have been created in some other move
         int[][] locations;
-        if(this.isLower())
+        if(this.isPromoted())
         {
-            locations = lower_possibleLocations;
+            if(this.isLower())
+            {
+                locations = promoted_lower;
+            }
+            else
+            {
+                locations = promoted_upper;
+            }
         }
-        else
-        {
-            locations = upper_possibleLocations;
+        else {
+            if (this.isLower()) {
+                locations = lower_possibleLocations;
+            } else {
+                locations = upper_possibleLocations;
+            }
         }
         for(int i=0;i<locations.length;i++)
         {
@@ -47,15 +59,13 @@ public class Relay extends Piece
                     {
                         Position move_loc = new Position(x,y);
                         moves.add(move_loc);
-                        System.out.print("Possible move = ");
-                        System.out.println(move_loc);                    }
+                 }
                 }
                 else //Not occupied
                 {
                     Position move_loc = new Position(x,y);
                     moves.add(move_loc);
-                    System.out.print("Possible move = ");
-                    System.out.println(move_loc);                }
+               }
 
             }
         }
