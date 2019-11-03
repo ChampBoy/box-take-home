@@ -43,16 +43,23 @@ public class Game
     {
         while(!isOver)
         {
-            boolean isInCheck = isInCheck(current_player_move);
             System.out.println(this.board);
             System.out.println("");
             upper.print_captured_list();
             lower.print_captured_list();
-            if(isInCheck)
+            if(isInCheck(current_player_move))
             {
                 System.out.println(current_player_move.getName()+" player is in check!");
+                System.out.println("Available moves: will be printed in the function now");
+                create_and_print_available_moves();
             }
             //print available moves here
+
+
+
+
+
+
             System.out.println(current_player_move.getName()+">");
             String input="";
             input=sc.nextLine();
@@ -268,6 +275,7 @@ public class Game
 //        System.out.println("Location of drive for current player = "+check_position);
         Player other_player =get_other_player(current_player_move);
         ArrayList<Position> all_targets= other_player.all_possible_moves(this.board);
+//        System.out.println("Printing blocks that can be targeted from isInCheck()");
 //        System.out.println(all_targets);
 //        Position test = new Position('a',5);
 //        if(all_targets.contains(test))
@@ -279,6 +287,100 @@ public class Game
             return true;
         }
         return false;
+    }
+    public void create_and_print_available_moves()
+    {
+        ArrayList<String> save_moves = new ArrayList<>();
+        Position current_drive_pos=board.findDrive(current_player_move);
+        Piece drive = board.getPiece(current_drive_pos);
+        Player other_player =get_other_player(current_player_move);
+        ArrayList<Position> all_targets= other_player.all_possible_moves(this.board);
+        //First find moves which can move drive
+        drive.generateMoves(board,current_drive_pos);
+        ArrayList<Position> drive_moves = drive.all_moves();
+        for(Position move : drive_moves)
+        {
+            if(!all_targets.contains(move))
+            {
+                //simulate moving drive to see if it avoids check
+                board.setPiece(move,drive);
+                board.removePiece(current_drive_pos);
+                if(!isInCheck(current_player_move))
+                {
+                    String str="move ";
+                    str+=current_drive_pos+" ";
+                    str+=move;
+                    save_moves.add(str);
+//                System.out.println(str);
+                }
+                board.setPiece(current_drive_pos,drive);
+                board.removePiece(move);
+            }
+        }
+//        System.out.println("Printing all_targets before removing anything");
+//        System.out.println(all_targets);
+        //Find moves of other pieces which can save the drive
+        ArrayList<Position> remove_these=new ArrayList<>();
+        for(Position target : all_targets) //finding targets which already have current players piece and removing
+        {
+            if(board.getPiece(target)!=null && board.getPiece(target).belongsTo(current_player_move))
+            {
+                remove_these.add(target);
+            }
+        }
+        all_targets.removeAll(remove_these);
+        System.out.println("Printing all_targets after the ones which have some pieces are removed");
+        System.out.println(all_targets);
+        for(int i=0;i<5;i++) //For the case when a piece can come in the way of check
+        {
+            for(int j=0;j<5;j++)
+            {
+                Piece p_temp=board.getPiece(i,j);
+                Position pos = new Position(i,j);
+                if(p_temp!=null && p_temp.belongsTo(current_player_move))
+                {
+                    p_temp.generateMoves(board,pos);
+                    ArrayList<Position> all_moves = p_temp.all_moves();
+                    for(Position move : all_moves)
+                    {
+                        Piece maybe_enemy=board.getPiece(move);
+                        if(maybe_enemy!=null && !(maybe_enemy.belongsTo(current_player_move)))
+                        {
+                            Piece enemy_piece =board.getPiece(move);
+                            board.setPiece(move,p_temp);
+                            board.removePiece(pos);
+                            if(!isInCheck(current_player_move))
+                            {
+                                String str="move ";
+                                str+=pos+" ";
+                                str+=move;
+                                save_moves.add(str);
+                            }
+                            board.setPiece(pos,p_temp);
+                            board.setPiece(move,enemy_piece);
+                        }
+                        if(all_targets.contains(move))
+                        {
+                            //Simulate moving the piece and check for check again
+                            board.setPiece(move,p_temp);
+                            board.removePiece(pos);
+                            if(!isInCheck(current_player_move))
+                            {
+                                String str="move ";
+                                str+=pos+" ";
+                                str+=move;
+                                save_moves.add(str);
+                            }
+                            board.setPiece(pos,p_temp);
+                            board.removePiece(move);
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println(save_moves);
+
+
     }
     public Player get_other_player(Player pl)
     {

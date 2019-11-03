@@ -103,6 +103,9 @@ public class Player
                 {
                     temp.generateMoves(b,p);
                     all_moves=temp.all_moves();
+                    for(Position move : all_moves)
+                    {
+                    }
                     set.addAll(all_moves);
                 }
             }
