@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="733a7f8f-a63f-4f6a-8169-045762bb976f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test-runner-linux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/box-take-home/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/box-take-home/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/box-take-home/Governance.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/box-take-home/Governance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/box-take-home/Notes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/box-take-home/Notes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/box-take-home/Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/box-take-home/Piece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/box-take-home/Preview.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/box-take-home/Preview.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/box-take-home/Relay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/box-take-home/Relay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/box-take-home/Shield.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/box-take-home/Shield.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Governance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Governance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Notes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Notes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Preview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Preview.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Relay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Relay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shield.java" afterDir="false" />
-    </list>
+    <list default="true" id="733a7f8f-a63f-4f6a-8169-045762bb976f" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +13,7 @@
     <session id="2026537570">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.4" value="1" />
@@ -148,7 +131,7 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/Game.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="634">
+                    <state relative-caret-position="226">
                       <caret line="188" column="43" selection-start-line="188" selection-start-column="43" selection-end-line="188" selection-end-column="43" />
                     </state>
                   </provider>
@@ -401,10 +384,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="3373" height="1415" extended-state="6" />
-    <editor active="true" />
+    <frame x="67" y="25" width="1687" height="1415" extended-state="4" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16260895" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32967702" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -635,7 +617,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
+        <state relative-caret-position="226">
           <caret line="188" column="43" selection-start-line="188" selection-start-column="43" selection-end-line="188" selection-end-column="43" />
         </state>
       </provider>
