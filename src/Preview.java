@@ -13,21 +13,23 @@ public class Preview extends Piece
     @Override
     public boolean canMove(Board board, Position start, Position end) {
         Position p;
-        if(isPromoted())
+        generateMoves(board,start);
+        for(Position pos : moves)
         {
-            shield_generateMoves(board,start);
-            for(Position pos : moves)
+            if(end.equals(pos))
             {
-                if(end.equals(pos))
-                {
                     return true;
-                }
             }
-            return false;
         }
-        else
+        return false;
+    }
+
+    public void generateMoves(Board board,Position start)
+    {
+        moves.clear(); //Clears moves that might have been created in some other move
+        if(!isPromoted())
         {
-            moves.clear();
+            Position p;
             if(this.isLower())
             {
                 p = new Position(start.getX(),start.getY()+1);
@@ -37,53 +39,40 @@ public class Preview extends Piece
                 p = new Position(start.getX(),start.getY()-1);
             }
             moves.add(p);
-            if(p.equals(end))
-            {
-                return true;
+        }
+        else {
+            int[][] locations;
+            if (this.isLower()) {
+                locations = lower_possibleLocations;
+            } else {
+                locations = upper_possibleLocations;
             }
-
-        }
-
-        return false;
-    }
-    public void shield_generateMoves(Board board,Position start)
-    {
-        moves.clear(); //Clears moves that might have been created in some other move
-        int[][] locations;
-        if(this.isLower())
-        {
-            locations = lower_possibleLocations;
-        }
-        else
-        {
-            locations = upper_possibleLocations;
-        }
-        for(int i=0;i<locations.length;i++)
-        {
-            int x= start.getX()+locations[i][0];
-            int y= start.getY()+locations[i][1];
-            if(board.isOnMap(x,y))
-            {
-                if(board.isOccupied(x,y))
-                {
-                    Piece end_piece = board.getPiece(x,y);
-                    if(!((this.isLower() && end_piece.isLower())|| (this.isUpper() && end_piece.isUpper())))
+            for (int i = 0; i < locations.length; i++) {
+                int x = start.getX() + locations[i][0];
+                int y = start.getY() + locations[i][1];
+                if (board.isOnMap(x, y)) {
+                    if (board.isOccupied(x, y)) {
+                        Piece end_piece = board.getPiece(x, y);
+                        if (!((this.isLower() && end_piece.isLower()) || (this.isUpper() && end_piece.isUpper()))) {
+                            Position move_loc = new Position(x, y);
+                            moves.add(move_loc);
+                        }
+                    } else //Not occupied
                     {
-                        Position move_loc = new Position(x,y);
+                        Position move_loc = new Position(x, y);
                         moves.add(move_loc);
-                        System.out.print("Possible move = ");
-                        System.out.println(move_loc);
                     }
-                }
-                else //Not occupied
-                {
-                    Position move_loc = new Position(x,y);
-                    moves.add(move_loc);
-                    System.out.print("Possible move = ");
-                    System.out.println(move_loc);
-                }
 
+                }
             }
         }
+    }
+    public boolean canBePromoted()
+    {
+        return true;
+    }
+    public ArrayList<Position> all_moves()
+    {
+        return this.moves;
     }
 }

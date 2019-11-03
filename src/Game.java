@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 public class Game
 {
     private Board board;
@@ -22,6 +22,7 @@ public class Game
         if(interactive)
         {
             this.board = new Board(true);
+            this.board.InitializePiecesToPlayers(this.lower,this.upper);
             sc=new Scanner(System.in);
             this.run_game_interactive();
         }
@@ -42,6 +43,7 @@ public class Game
     {
         while(!isOver)
         {
+            boolean isInCheck = isInCheck(current_player_move); //REMOVE
             System.out.println(this.board);
             System.out.println("");
             upper.print_captured_list();
@@ -64,6 +66,16 @@ public class Game
                 make_move(split);
                 //continue from here
             }
+            else if(split[0].equals("drop"))
+            {
+                drop_move(split);
+            }
+            else
+            {
+                System.out.println("Illegal command input");
+                this.end_game_for_current_player();
+                return;
+            }
             //change player turns and increment move counter,also if move counter 200 then end
             this.moves++;
             this.current_player_move=get_other_player(this.current_player_move);
@@ -77,6 +89,11 @@ public class Game
 
     public void make_move(String[] split)
     {
+        boolean promote=false;
+        if(split.length==4 && split[3].equals("promote"))
+        {
+            promote=true;
+        }
         String initial_position=split[1];
         String final_position=split[2];
         Position initial_p = new Position(initial_position.charAt(0),Character.getNumericValue(initial_position.charAt(1)));
@@ -93,7 +110,7 @@ public class Game
         }
         if(!board.isOccupied(initial_p)) //or end
         {
-            System.out.println("Illegal occupied by same player");
+            System.out.println("Illegal piece not present");
             this.end_game_for_current_player();
             return;
         }
@@ -121,13 +138,27 @@ public class Game
                 }
                 //If end piece occupied by opponent then :
                 end_piece.change_teams();
+                end_piece.dePromote(); //handles case if not promoted already
                 current_player_move.capturePiece(end_piece);
+                get_other_player(current_player_move).remove_available(end_piece);
                 board.removePiece(final_p);
                 board.removePiece(initial_p);
                 board.setPiece(final_p,current_piece);
             }
-            //if this move caused check then IT IS ILLEGAL AND GAME OVER
-
+            if(promote) //If trying to promote piece
+            {
+                if(current_player_move.piece_in_promote_row(final_p) && current_piece.canBePromoted())
+                {
+                    current_piece.Promote();
+                }
+                else
+                {
+                    System.out.println("Piece not in correct promotion row. Illegal Move.");
+                    this.end_game_for_current_player();
+                    return;
+                }
+            }
+            //if this move caused check on own player then IT IS ILLEGAL AND GAME OVER
 
 
         }
@@ -136,6 +167,22 @@ public class Game
             this.end_game_for_current_player();
             return;
         }
+    }
+    public void drop_move(String[] split)
+    {
+        System.out.println("Inside drop move");
+        Piece to_drop = current_player_move.captured_piece(split[1]);
+        if(to_drop==null)
+        {
+            System.out.println("Piece to be dropped is not captured");
+            this.end_game_for_current_player();
+            return;
+        }
+        Position pos = new Position(split[2].charAt(0),Character.getNumericValue(split[2].charAt(1)));
+        //check if position is legal to place dropped piece
+
+        board.setPiece(pos,to_drop);
+        current_player_move.remove_captured(to_drop);
     }
 
     public void run_game_file_mode(String path)
@@ -150,6 +197,7 @@ public class Game
                 Position pos =new Position(ipiece.position);
                 board.setPiece(pos,p);
             }
+            this.board.InitializePiecesToPlayers(this.lower,this.upper);
             for(String upper_captured : temp.upperCaptures) //filling provided upper captures
             {
                 if(upper_captured.equals(""))
@@ -168,6 +216,7 @@ public class Game
                 Piece p =Utils.create_piece(lower_captured);
                 lower.capturePiece(p);
             }
+            String last_move="";
             for(String move : temp.moves)
             {
                 if(!isOver) {
@@ -176,6 +225,11 @@ public class Game
                         make_move(split);
                         //continue from here
                     }
+                    else if(split[0].equals("drop"))
+                    {
+                        drop_move(split);
+                    }
+                    last_move=move;
                     this.moves++;
                     this.current_player_move = get_other_player(this.current_player_move);
                     if (moves == 200) {
@@ -186,6 +240,8 @@ public class Game
 
                 }
             }
+            System.out.print(get_other_player(current_player_move).getName()+" player action: ");
+            System.out.println(last_move);
             System.out.println(this.board);
             upper.print_captured_list();
             lower.print_captured_list();
@@ -199,8 +255,24 @@ public class Game
         }
 
 
-
-
+    }
+    public boolean isInCheck(Player current_player)
+    {
+        Position check_position = board.findDrive(current_player_move);
+//        System.out.println("Location of drive for current player = "+check_position);
+        Player other_player =get_other_player(current_player_move);
+        ArrayList<Position> all_targets= other_player.all_possible_moves(this.board);
+//        System.out.println(all_targets);
+//        Position test = new Position('a',5);
+//        if(all_targets.contains(test))
+//        {
+//            System.out.println("Can be attacked");
+//        }
+        if(all_targets.contains(check_position))
+        {
+            return true;
+        }
+        return false;
     }
     public Player get_other_player(Player pl)
     {

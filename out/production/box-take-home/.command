@@ -1,0 +1,1 @@
+java Driver -f ../test/BoShogi_Test_Cases/

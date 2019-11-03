@@ -52,4 +52,12 @@ public class Drive extends Piece
 
         }
     }
+    public boolean canBePromoted()
+    {
+        return false;
+    }
+    public ArrayList<Position> all_moves()
+    {
+        return this.moves;
+    }
 }

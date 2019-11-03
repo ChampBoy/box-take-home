@@ -121,5 +121,13 @@ public class Notes extends Piece
         }
         return false;
     }
+    public boolean canBePromoted()
+    {
+        return true;
+    }
+    public ArrayList<Position> all_moves()
+    {
+        return this.moves;
+    }
 
 }

@@ -70,4 +70,13 @@ public class Relay extends Piece
             }
         }
     }
+    public boolean canBePromoted()
+    {
+        return true;
+    }
+    public ArrayList<Position> all_moves()
+    {
+        return this.moves;
+    }
+
 }

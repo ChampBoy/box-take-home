@@ -58,4 +58,12 @@ public class Shield extends Piece
             }
         }
     }
+    public ArrayList<Position> all_moves()
+    {
+        return this.moves;
+    }
+    public boolean canBePromoted()
+    {
+        return false;
+    }
 }
