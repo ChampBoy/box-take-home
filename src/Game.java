@@ -43,16 +43,17 @@ public class Game
     {
         while(!isOver)
         {
-            boolean isInCheck = isInCheck(current_player_move); //REMOVE
+            boolean isInCheck = isInCheck(current_player_move);
             System.out.println(this.board);
             System.out.println("");
             upper.print_captured_list();
             lower.print_captured_list();
+            if(isInCheck)
+            {
+                System.out.println(current_player_move.getName()+" player is in check!");
+            }
+            //print available moves here
             System.out.println(current_player_move.getName()+">");
-            //CHECK for CHECK here
-
-
-
             String input="";
             input=sc.nextLine();
             if(input.equals(" "))
@@ -158,9 +159,14 @@ public class Game
                     return;
                 }
             }
+
             //if this move caused check on own player then IT IS ILLEGAL AND GAME OVER
-
-
+            if(isInCheck(current_player_move))
+            {
+                System.out.println("Player caused their own drive to go into check or did not do anything about check. Illegal Move");
+                this.end_game_for_current_player();
+                return;
+            }
         }
         else //illegal move
         {
