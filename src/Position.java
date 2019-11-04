@@ -90,6 +90,6 @@ public class Position
     {
         String s="";
 
-        return "("+x+","+(y+1)+")";
+        return ""+x+(y+1);
     }
 }
