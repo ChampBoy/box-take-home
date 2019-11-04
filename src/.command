@@ -1,1 +1,1 @@
-java Driver -f ../test/BoShogi_Test_Cases/
+java Driver -f

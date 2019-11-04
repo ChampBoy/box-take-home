@@ -56,7 +56,7 @@ public class Game
                 if(avail_moves.size()==0)
                 {
                     Player other_player = get_other_player(current_player_move);
-                    other_player.print_win_message("Checkmate.");
+                    other_player.print_win_message("  Checkmate.");
                     this.setOver();
                     return;
                 }
@@ -305,7 +305,7 @@ public class Game
                 if(avail_moves.size()==0)
                 {
                     Player other_player = get_other_player(current_player_move);
-                    other_player.print_win_message("Checkmate.");
+                    other_player.print_win_message("  Checkmate.");
                     this.setOver();
                     return;
                 }
@@ -461,7 +461,7 @@ public class Game
         lower.print_captured_list();
         System.out.println("");
         Player other_player = get_other_player(current_player_move);
-        other_player.print_win_message("Illegal move.");
+        other_player.print_win_message("  Illegal move.");
         this.setOver();
     }
 }

@@ -18,7 +18,6 @@ public class Notes extends Piece
                 return true;
             }
         }
-        System.out.println("Illegal Move,printing from inside Notes piece");
         return false;
     }
 

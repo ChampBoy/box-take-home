@@ -21,7 +21,6 @@ public class Relay extends Piece
                 return true;
             }
         }
-        System.out.println("Illegal Move,printing from inside Shield piece");
         return false;
     }
     public void generateMoves(Board board,Position start)

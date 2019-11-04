@@ -18,7 +18,6 @@ public class Drive extends Piece
                 return true;
             }
         }
-        System.out.println("Illegal Move,printing from inside drive piece");
         return false;
 
     }

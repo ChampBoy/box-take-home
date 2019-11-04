@@ -103,7 +103,6 @@ public class Governance extends Piece
                 return true;
             }
         }
-        System.out.println("Illegal Move,printing from inside Governance piece");
         return false;
 
     }

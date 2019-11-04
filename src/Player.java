@@ -33,7 +33,7 @@ public class Player
     }
     public void print_win_message(String reason)
     {
-        System.out.println(this.name+" players wins."+reason);
+        System.out.println(this.name+" player wins."+reason);
     }
     public void print_captured_list()
     {
