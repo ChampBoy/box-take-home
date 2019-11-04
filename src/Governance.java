@@ -119,8 +119,9 @@ public class Governance extends Piece
             {
                 Position move_loc = new Position(x,y);
                 moves.add(move_loc);
-                return true;
+
             }
+            return true;
         }
         else
         {
@@ -128,7 +129,6 @@ public class Governance extends Piece
             moves.add(move_loc);
             return false;
         }
-        return false;
     }
     public boolean canBePromoted()
     {

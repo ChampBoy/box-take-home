@@ -109,8 +109,8 @@ public class Notes extends Piece
             {
                 Position move_loc = new Position(x,y);
                 moves.add(move_loc);
-                return true;
             }
+            return true;
         }
         else
         {
@@ -118,7 +118,6 @@ public class Notes extends Piece
             moves.add(move_loc);
             return false;
         }
-        return false;
     }
     public boolean canBePromoted()
     {
