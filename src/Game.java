@@ -52,7 +52,11 @@ public class Game
             {
                 System.out.println(current_player_move.getName()+" player is in check!");
                 System.out.println("Available moves: ");
-                Set<String> avail_moves=create_and_print_available_moves();
+                ArrayList<String> avail_moves=create_and_print_available_moves();
+                for(String s : avail_moves)
+                {
+                    System.out.println(s);
+                }
                 if(avail_moves.size()==0)
                 {
                     Player other_player = get_other_player(current_player_move);
@@ -92,7 +96,7 @@ public class Game
             //change player turns and increment move counter,also if move counter 200 then end
             this.moves++;
             this.current_player_move=get_other_player(this.current_player_move);
-            if(moves==200)
+            if(moves==400)
             {
                 System.out.println("Tie game. Too many moves.");
                 this.setOver();
@@ -107,6 +111,7 @@ public class Game
         {
             promote=true;
         }
+
         String initial_position=split[1];
         String final_position=split[2];
         Position initial_p = new Position(initial_position.charAt(0),Character.getNumericValue(initial_position.charAt(1)));
@@ -133,14 +138,39 @@ public class Game
         }
         if(current_piece.canMove(board,initial_p,final_p)) //If move is legal
         {
+
+            if(promote) //If trying to promote piece
+            {
+                if(current_player_move.piece_in_promote_row(final_p) && current_piece.canBePromoted() && !current_piece.isPromoted())
+                {
+                    current_piece.Promote();
+                }
+                else
+                {
+                    this.end_game_for_current_player(last_move);
+                    return;
+                }
+            }
+//            if(current_player_move.piece_in_promote_row(final_p) && current_piece.canBePromoted() && !current_piece.isPromoted())
+//            {
+//                current_piece.Promote(); //Force promotion without mentioning promote
+//            }
             if(!board.isOccupied(final_p)) //if final position not occupied
             {
                 board.removePiece(initial_p);
                 board.setPiece(final_p,current_piece);
+                if(isInCheck(current_player_move)) //if this move caused check on own player then IT IS ILLEGAL AND GAME OVER
+                {
+                    board.setPiece(initial_p,current_piece);
+                    board.removePiece(final_p);
+                    this.end_game_for_current_player(last_move);
+                    return;
+                }
             }
             else //if final position occupied
             {
                 Piece end_piece=board.getPiece(final_p);
+                Piece enemy_copy = end_piece;
                 if(end_piece.belongsTo(current_player_move)) //If final spot contained a piece from same player
                 {
                     this.end_game_for_current_player(last_move);
@@ -154,25 +184,14 @@ public class Game
                 board.removePiece(final_p);
                 board.removePiece(initial_p);
                 board.setPiece(final_p,current_piece);
-            }
-            if(promote) //If trying to promote piece
-            {
-                if(current_player_move.piece_in_promote_row(final_p) && current_piece.canBePromoted())
+                //if this move caused check on own player then IT IS ILLEGAL AND GAME OVER
+                if(isInCheck(current_player_move))
                 {
-                    current_piece.Promote();
-                }
-                else
-                {
+                    board.setPiece(initial_p,current_piece);
+                    board.setPiece(final_p,enemy_copy);
                     this.end_game_for_current_player(last_move);
                     return;
                 }
-            }
-
-            //if this move caused check on own player then IT IS ILLEGAL AND GAME OVER
-            if(isInCheck(current_player_move))
-            {
-                this.end_game_for_current_player(last_move);
-                return;
             }
         }
         else //illegal move
@@ -227,11 +246,16 @@ public class Game
             }
             //CHECK IF PREVIEW CAUSING CHECKMATE
             board.setPiece(pos,to_drop);
+            //Simulate changing player move to check if enemy got a checkmate
+            this.current_player_move=get_other_player(this.current_player_move);
             if(isInCheck(current_player_move) && create_and_print_available_moves().size()==0)
             {
+                board.removePiece(pos);
+                this.current_player_move=get_other_player(this.current_player_move);
                 this.end_game_for_current_player(last_move);
                 return;
             }
+            this.current_player_move=get_other_player(this.current_player_move);
         }
         board.setPiece(pos,to_drop);
         current_player_move.remove_captured(to_drop);
@@ -268,27 +292,27 @@ public class Game
                 lower.capturePiece(p);
             }
             for(String move : temp.moves)
-            { last_move=move;
-                    String[] split = move.split(" ");
-                    if (split[0].equals("move")) {
-                            make_move(split);
-                            //continue from here
-                    }
-                    else if(split[0].equals("drop"))
-                        {
-                            drop_move(split);
-                        }
-                        last_move=move;
-                    if(isOver)
-                    {
-                        return;
-                    }
-                    this.moves++;
-                    this.current_player_move = get_other_player(this.current_player_move);
-                    if (moves == 200) {
-                        System.out.println("Tie game. Too many moves.");
-                        this.setOver();
-                    }
+            {
+                if (this.moves == 400) {
+                    System.out.println("Tie game. Too many moves.");
+                    this.setOver();
+                }
+                last_move=move;
+                String[] split = move.split(" ");
+                if (split[0].equals("move")) {
+                    make_move(split);//continue from here
+                }
+                else if(split[0].equals("drop"))
+                {
+                    drop_move(split);
+                }
+                last_move=move;
+                if(isOver)
+                {
+                    return;
+                }
+                this.current_player_move = get_other_player(this.current_player_move);
+                this.moves++;
                     //move ends here
             }
             System.out.print(get_other_player(current_player_move).getName()+" player action: ");
@@ -299,18 +323,41 @@ public class Game
             System.out.println("");
             if(isInCheck(current_player_move))
             {
-                System.out.println(current_player_move.getName()+" player is in check!");
-                System.out.println("Available moves: ");
-                Set<String> avail_moves=create_and_print_available_moves();
-                if(avail_moves.size()==0)
+                ArrayList<String> avail_moves=create_and_print_available_moves();
+                if(avail_moves.size()==0) //last move checkmate check
                 {
                     Player other_player = get_other_player(current_player_move);
                     other_player.print_win_message("  Checkmate.");
                     this.setOver();
                     return;
                 }
+                //If not checkmate then check if moves=400
+                if (this.moves == 400) {
+                    System.out.println("Tie game.  Too many moves.");
+                    this.setOver();
+                    return;
+                }
+                else
+                {
+                    System.out.println(current_player_move.getName()+" player is in check!");
+                    System.out.println("Available moves: ");
+                    for(String s : avail_moves)
+                    {
+                        System.out.println(s);
+                    }
+
+
+                }
             }
-            System.out.println(current_player_move.getName()+">");
+            if (this.moves == 400) {
+                System.out.println("Tie game.  Too many moves.");
+                this.setOver();
+                return;
+            }
+            else
+            {
+                System.out.println(current_player_move.getName()+">");
+            }
 
         }
         catch(Exception e)
@@ -340,7 +387,7 @@ public class Game
         return false;
     }
 
-    public Set<String> create_and_print_available_moves()
+    public ArrayList<String> create_and_print_available_moves()
     {
         Set<String> save_moves = new LinkedHashSet<>();
         Position current_drive_pos=board.findDrive(current_player_move);
@@ -435,11 +482,9 @@ public class Game
                 }
             }
         }
-        for(String s : save_moves)
-        {
-            System.out.println(s);
-        }
-        return save_moves;
+        ArrayList<String> ans = new ArrayList<>(save_moves);
+        Collections.sort(ans);
+        return ans;
 
 
     }
