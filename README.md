@@ -15,17 +15,20 @@ Allows the program to read initial map settings,initial captures and moves from
 the file provided.
 
 ## System Design
+
 The game uses different classes which can be found in the src folder.
 Like Player,Piece,Board,Game.
 Different pieces extended the abstract Piece class.
 The main game is run inside the Game class.
 
-##Performance
+## Performance
+
 Since the board is only 5X5, max moves is 400 and there are not a lot of piece,
 Even a brute force approach to finding pieces on the board, or simulating piece moves/drops
 for getting out of checks does not affect the program run time a lot.
 
-##Optimizations for the future
+## Optimizations for the future
+
 Future optimizations might include the following things :
 
 1)Breaking the code down into even more functions (Especially when trying to compute available moves from inside check)
