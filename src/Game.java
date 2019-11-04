@@ -275,8 +275,8 @@ public class Game
 //        System.out.println("Location of drive for current player = "+check_position);
         Player other_player =get_other_player(current_player_move);
         ArrayList<Position> all_targets= other_player.all_possible_moves(this.board);
-        System.out.println(other_player.getName()+" can Target");
-        System.out.println(all_targets);
+//        System.out.println(other_player.getName()+" can Target");
+//        System.out.println(all_targets);
 //        Position test = new Position('a',5);
 //        if(all_targets.contains(test))
 //        {
@@ -298,15 +298,13 @@ public class Game
         //First find moves which can move drive
         drive.generateMoves(board,current_drive_pos);
         ArrayList<Position> drive_moves = drive.all_moves();
-        System.out.println("Printing board before drive simulation");
-        System.out.println(board);
         for(Position move : drive_moves)
         {
             if(!all_targets.contains(move))
             {
                 //simulate moving drive to see if it avoids check
                 Piece maybe_enemy=board.getPiece(move);
-                if(maybe_enemy!=null && !(maybe_enemy.belongsTo(current_player_move)))
+                if(maybe_enemy!=null && !(maybe_enemy.belongsTo(current_player_move))) //if position contains enemy
                 {
                     Piece enemy_piece =board.getPiece(move);
                     board.setPiece(move,drive);
@@ -317,12 +315,11 @@ public class Game
                         str+=current_drive_pos+" ";
                         str+=move;
                         save_moves.add(str);
-                        System.out.println(str);
                     }
                     board.setPiece(current_drive_pos,drive);
                     board.setPiece(move,enemy_piece);
                 }
-                else
+                else //if position isempty then simulate
                 {
                     board.setPiece(move,drive);
                     board.removePiece(current_drive_pos);
@@ -340,21 +337,7 @@ public class Game
 
             }
         }
-        System.out.println("Printing board after simulation of drive moves");
-//        System.out.println("Printing all_targets before removing anything");
-//        System.out.println(all_targets);
-        //Find moves of other pieces which can save the drive
-//        ArrayList<Position> remove_these=new ArrayList<>();
-//        for(Position target : all_targets) //finding targets which already have current players piece and removing
-//        {
-//            if(board.getPiece(target)!=null && board.getPiece(target).belongsTo(current_player_move))
-//            {
-//                System.out.println("Removing target : "+target);
-//                remove_these.add(target);
-//            }
-//        }
-//        all_targets.removeAll(remove_these);
-        for(int i=0;i<5;i++) //For the case when a piece can come in the way of check
+        for(int i=0;i<5;i++) //For the case when a piece can come in the way of check or capture piece causing check
         {
             for(int j=0;j<5;j++)
             {
@@ -366,8 +349,6 @@ public class Game
                     ArrayList<Position> all_moves = p_temp.all_moves();
                     for(Position move : all_moves)
                     {
-                        System.out.println("Checking move from "+pos+" to "+move);
-                        System.out.println(board);
                         Piece maybe_enemy=board.getPiece(move);
                         if(maybe_enemy!=null && !(maybe_enemy.belongsTo(current_player_move)))
                         {
@@ -380,7 +361,6 @@ public class Game
                                 str+=pos+" ";
                                 str+=move;
                                 save_moves.add(str);
-                                System.out.println(str);
                             }
                             board.setPiece(pos,p_temp);
                             board.setPiece(move,enemy_piece);
@@ -396,7 +376,6 @@ public class Game
                                 str+=pos+" ";
                                 str+=move;
                                 save_moves.add(str);
-                                System.out.println(str);
                             }
                             board.setPiece(pos,p_temp);
                             board.removePiece(move);
