@@ -1,4 +1,4 @@
-#BoxShogi
+# BoxShogi
 BoxShogi is basically a modified version of the game Shogi.
 The project is written in Java 8. 
 Compile the code by : javac Driver.java

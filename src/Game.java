@@ -38,6 +38,11 @@ public class Game
     {
         while(!isOver)
         {
+            if(moves==400)
+            {
+                System.out.println("Tie game. Too many moves.");
+                this.setOver();
+            }
             System.out.print(this.board);
             System.out.println();
             upper.print_captured_list();
@@ -61,7 +66,6 @@ public class Game
                 }
 
             }
-            //print available moves here
             System.out.print(current_player_move.getName()+"> ");
             String input;
             input=sc.nextLine();
@@ -90,11 +94,6 @@ public class Game
             //change player turns and increment move counter,also if move counter 200 then end
             this.moves++;
             this.current_player_move=get_other_player(this.current_player_move);
-            if(moves==400)
-            {
-                System.out.println("Tie game. Too many moves.");
-                this.setOver();
-            }
         }
     }
 
