@@ -7,9 +7,7 @@ public class Game
     private Player lower;
     private Player upper;
     private Player current_player_move;
-    private boolean interactive;
     private Scanner sc;
-    private String file_path;
     private String last_move;
     public Game(boolean interactive,String file_path)
     {
@@ -18,41 +16,38 @@ public class Game
         this.lower=new Player("lower");
         this.upper=new Player("UPPER");
         this.current_player_move=lower;
-        this.interactive=interactive;
         if(interactive)
         {
             this.board = new Board(true);
-            this.board.InitializePiecesToPlayers(this.lower,this.upper);
             sc=new Scanner(System.in);
             this.run_game_interactive();
         }
         else
         {
             this.board = new Board();
-            this.file_path=file_path;
             this.run_game_file_mode(file_path);
         }
 
 
     }
-    public void setOver()
+    private void setOver()
     {
         this.isOver=true;
     }
-    public void run_game_interactive()
+    private void run_game_interactive()
     {
         while(!isOver)
         {
             System.out.print(this.board);
-            System.out.println("");
+            System.out.println();
             upper.print_captured_list();
             lower.print_captured_list();
-            System.out.println("");
-            if(isInCheck(current_player_move))
+            System.out.println();
+            if(isInCheck())
             {
                 System.out.println(current_player_move.getName()+" player is in check!");
                 System.out.println("Available moves: ");
-                ArrayList<String> avail_moves=create_and_print_available_moves();
+                ArrayList<String> avail_moves= create_available_moves();
                 for(String s : avail_moves)
                 {
                     System.out.println(s);
@@ -68,7 +63,7 @@ public class Game
             }
             //print available moves here
             System.out.print(current_player_move.getName()+"> ");
-            String input="";
+            String input;
             input=sc.nextLine();
             if(input.equals(" "))
             {
@@ -82,7 +77,6 @@ public class Game
             if(split[0].equals("move"))
             {
                 make_move(split);
-                //continue from here
             }
             else if(split[0].equals("drop"))
             {
@@ -104,7 +98,7 @@ public class Game
         }
     }
 
-    public void make_move(String[] split)
+    private void make_move(String[] split)
     {
         boolean promote=false;
         if(split.length==4 && split[3].equals("promote"))
@@ -116,10 +110,6 @@ public class Game
         String final_position=split[2];
         Position initial_p = new Position(initial_position.charAt(0),Character.getNumericValue(initial_position.charAt(1)));
         Position final_p = new Position(final_position.charAt(0),Character.getNumericValue(final_position.charAt(1)));
-//        System.out.print("Start position  ");
-//        System.out.println(initial_position);
-//        System.out.print("End Position    ");
-//        System.out.println(final_position);
         if(!board.isOnMap(initial_p) || !board.isOnMap(final_p))
         {
             this.end_game_for_current_player(last_move);
@@ -159,18 +149,16 @@ public class Game
             {
                 board.removePiece(initial_p);
                 board.setPiece(final_p,current_piece);
-                if(isInCheck(current_player_move)) //if this move caused check on own player then IT IS ILLEGAL AND GAME OVER
+                if(isInCheck()) //if this move caused check on own player then IT IS ILLEGAL AND GAME OVER
                 {
                     board.setPiece(initial_p,current_piece);
                     board.removePiece(final_p);
                     this.end_game_for_current_player(last_move);
-                    return;
                 }
             }
             else //if final position occupied
             {
                 Piece end_piece=board.getPiece(final_p);
-                Piece enemy_copy = end_piece;
                 if(end_piece.belongsTo(current_player_move)) //If final spot contained a piece from same player
                 {
                     this.end_game_for_current_player(last_move);
@@ -181,27 +169,24 @@ public class Game
                 //If end piece occupied by opponent then :
                 end_piece.change_teams();
                 current_player_move.capturePiece(end_piece);
-                get_other_player(current_player_move).remove_available(end_piece);
                 board.removePiece(final_p);
                 board.removePiece(initial_p);
                 board.setPiece(final_p,current_piece);
                 //if this move caused check on own player then IT IS ILLEGAL AND GAME OVER
-                if(isInCheck(current_player_move))
+                if(isInCheck())
                 {
                     board.setPiece(initial_p,current_piece);
-                    board.setPiece(final_p,enemy_copy);
+                    board.setPiece(final_p, end_piece);
                     this.end_game_for_current_player(last_move);
-                    return;
                 }
             }
         }
         else //illegal move
         {
             this.end_game_for_current_player(last_move);
-            return;
         }
     }
-    public void drop_move(String[] split)
+    private void drop_move(String[] split)
     {
         Piece to_drop = current_player_move.captured_piece(split[1]);
         if(to_drop==null)
@@ -249,7 +234,7 @@ public class Game
             board.setPiece(pos,to_drop);
             //Simulate changing player move to check if enemy got a checkmate
             this.current_player_move=get_other_player(this.current_player_move);
-            if(isInCheck(current_player_move) && create_and_print_available_moves().size()==0)
+            if(isInCheck() && create_available_moves().size()==0)
             {
                 board.removePiece(pos);
                 this.current_player_move=get_other_player(this.current_player_move);
@@ -262,7 +247,7 @@ public class Game
         current_player_move.remove_captured(to_drop);
     }
 
-    public void run_game_file_mode(String path)
+    private void run_game_file_mode(String path)
     {
         try
         {
@@ -273,7 +258,6 @@ public class Game
                 Position pos =new Position(ipiece.position);
                 board.setPiece(pos,p);
             }
-            this.board.InitializePiecesToPlayers(this.lower,this.upper);
             for(String upper_captured : temp.upperCaptures) //filling provided upper captures
             {
                 if(upper_captured.equals(""))
@@ -321,10 +305,10 @@ public class Game
             System.out.println(this.board);
             upper.print_captured_list();
             lower.print_captured_list();
-            System.out.println("");
-            if(isInCheck(current_player_move))
+            System.out.println();
+            if(isInCheck())
             {
-                ArrayList<String> avail_moves=create_and_print_available_moves();
+                ArrayList<String> avail_moves= create_available_moves();
                 if(avail_moves.size()==0) //last move checkmate check
                 {
                     Player other_player = get_other_player(current_player_move);
@@ -353,7 +337,6 @@ public class Game
             if (this.moves == 400) {
                 System.out.println("Tie game.  Too many moves.");
                 this.setOver();
-                return;
             }
             else
             {
@@ -368,27 +351,15 @@ public class Game
 
 
     }
-    public boolean isInCheck(Player current_player)
+    private boolean isInCheck() //checks if current player is in check
     {
         Position check_position = board.findDrive(current_player_move);
-//        System.out.println("Location of drive for current player = "+check_position);
         Player other_player =get_other_player(current_player_move);
         ArrayList<Position> all_targets= other_player.all_possible_moves(this.board);
-//        System.out.println(other_player.getName()+" can Target");
-//        System.out.println(all_targets);
-//        Position test = new Position('a',5);
-//        if(all_targets.contains(test))
-//        {
-//            System.out.println("Can be attacked");
-//        }
-        if(all_targets.contains(check_position))
-        {
-            return true;
-        }
-        return false;
+        return all_targets.contains(check_position);
     }
 
-    public ArrayList<String> create_and_print_available_moves()
+    private ArrayList<String> create_available_moves()
     {
         Set<String> save_moves = new LinkedHashSet<>();
         Position current_drive_pos=board.findDrive(current_player_move);
@@ -409,7 +380,7 @@ public class Game
                     Piece enemy_piece =board.getPiece(move);
                     board.setPiece(move,drive);
                     board.removePiece(current_drive_pos);
-                    if(!isInCheck(current_player_move))
+                    if(!isInCheck())
                     {
                         String str="move ";
                         str+=current_drive_pos+" ";
@@ -423,7 +394,7 @@ public class Game
                 {
                     board.setPiece(move,drive);
                     board.removePiece(current_drive_pos);
-                    if(!isInCheck(current_player_move))
+                    if(!isInCheck())
                     {
                         String str="move ";
                         str+=current_drive_pos+" ";
@@ -454,7 +425,7 @@ public class Game
                             Piece enemy_piece =board.getPiece(move);
                             board.setPiece(move,p_temp);
                             board.removePiece(pos);
-                            if(!isInCheck(current_player_move))
+                            if(!isInCheck())
                             {
                                 String str="move ";
                                 str+=pos+" ";
@@ -469,7 +440,7 @@ public class Game
                             //Simulate moving the piece and check for check again
                             board.setPiece(move,p_temp);
                             board.removePiece(pos);
-                            if(!isInCheck(current_player_move))
+                            if(!isInCheck())
                             {
                                 String str="move ";
                                 str+=pos+" ";
@@ -483,7 +454,7 @@ public class Game
                 }
             }
         }
-        for(Piece p :current_player_move.getCaptured())
+        for(Piece p :current_player_move.getCaptured()) //Finding available drop moves
         {
             for(int i=0;i<5;i++)
             {
@@ -493,7 +464,7 @@ public class Game
                     if(!board.isOccupied(pos))
                     {
                         board.setPiece(pos,p);
-                        if(!isInCheck(current_player_move))
+                        if(!isInCheck())
                         {
                             char c=Character.toLowerCase(p.toString().charAt(0));
                             String str="drop "+c+" "+pos;
@@ -505,10 +476,10 @@ public class Game
             }
         }
         ArrayList<String> ans = new ArrayList<>(save_moves);
-        Collections.sort(ans);
+        Collections.sort(ans); //to match required case
         return ans;
     }
-    public Player get_other_player(Player pl)
+    private Player get_other_player(Player pl)
     {
         if (pl.getName().equals("UPPER"))
         {
@@ -517,14 +488,14 @@ public class Game
         else
             return this.upper;
     }
-    public void end_game_for_current_player(String last_move)
+    private void end_game_for_current_player(String last_move)
     {
         System.out.print((current_player_move).getName()+" player action: "); //might be wrong
         System.out.println(last_move);
         System.out.println(this.board);
         upper.print_captured_list();
         lower.print_captured_list();
-        System.out.println("");
+        System.out.println();
         Player other_player = get_other_player(current_player_move);
         other_player.print_win_message("  Illegal move.");
         this.setOver();

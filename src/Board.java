@@ -3,9 +3,9 @@
  */
 public class Board {
 
-    Piece[][] board;
+    private Piece[][] board;
 
-    final int BOARD_SIZE = 5;
+    private final int BOARD_SIZE = 5;
 
     public Board(boolean initialized)
     {
@@ -41,29 +41,29 @@ public class Board {
         return stringifyBoard(pieces);
     }
 
-    public boolean isOccupied(int col, int row) {
+    boolean isOccupied(int col, int row) {
         return board[col][row] != null;
     }
-    public boolean isOccupied(Position p)
+    boolean isOccupied(Position p)
     {
         return board[p.getX()][p.getY()]!=null;
     }
 
     private String stringifyBoard(String[][] board) {
-        String str = "";
+        StringBuilder str = new StringBuilder();
 
         for (int row = board.length - 1; row >= 0; row--) {
 
-            str += Integer.toString(row + 1) + " |";
+            str.append(Integer.toString(row + 1)).append(" |");
             for (int col = 0; col < board[row].length; col++) {
-                str += stringifySquare(board[col][row]);
+                str.append(stringifySquare(board[col][row]));
             }
-            str += System.getProperty("line.separator");
+            str.append(System.getProperty("line.separator"));
         }
 
-        str += "    a  b  c  d  e" + System.getProperty("line.separator");
+        str.append("    a  b  c  d  e").append(System.getProperty("line.separator"));
 
-        return str;
+        return str.toString();
     }
 
     private String stringifySquare(String sq) {
@@ -78,11 +78,11 @@ public class Board {
 
         throw new IllegalArgumentException("Board must be an array of strings like \"\", \"P\", or \"+P\"");
     }
-    public boolean isOnMap(int x_board,int y_board)
+    boolean isOnMap(int x_board, int y_board)
     {
         return x_board >= 0 && y_board >= 0 && x_board < BOARD_SIZE && y_board < BOARD_SIZE;
     }
-    public boolean isOnMap(Position p)
+    boolean isOnMap(Position p)
     {
         return isOnMap(p.getX(),p.getY());
     }
@@ -90,11 +90,11 @@ public class Board {
     {
         return this.board[x][y];
     }
-    public void setPiece(Position p , Piece place)
+    void setPiece(Position p, Piece place)
     {
         this.board[p.getX()][p.getY()]=place; //y starts from 1 not 0
     }
-    public void removePiece(Position p)
+    void removePiece(Position p)
     {
         this.board[p.getX()][p.getY()]=null;
     }
@@ -102,7 +102,7 @@ public class Board {
     {
         return this.board[p.getX()][p.getY()];
     }
-    public Position findDrive(Player p)
+    Position findDrive(Player p)
     {
         char to_find=' ';
         if(p.getName().equals("UPPER"))
@@ -128,27 +128,6 @@ public class Board {
             }
         }
         return null; //Should not reach here if drive is present
-    }
-    public void InitializePiecesToPlayers(Player lower,Player upper)
-    {
-        for(int i =0;i<BOARD_SIZE;i++)
-        {
-            for(int j=0;j<BOARD_SIZE;j++)
-            {
-                Piece temp=board[i][j];
-                if(temp!=null)
-                {
-                    if(Character.isLowerCase(temp.toString().charAt(0)))
-                    {
-                        lower.add_piece_on_board(temp);
-                    }
-                    else
-                    {
-                        upper.add_piece_on_board(temp);
-                    }
-                }
-            }
-        }
     }
 
 }
