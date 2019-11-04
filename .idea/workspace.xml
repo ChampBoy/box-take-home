@@ -4,8 +4,24 @@
     <list default="true" id="733a7f8f-a63f-4f6a-8169-045762bb976f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/box-take-home/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/box-take-home/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/box-take-home/Governance.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/box-take-home/Governance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/box-take-home/Notes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/box-take-home/Notes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drive.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Driver.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Governance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Notes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Piece.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Position.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Preview.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Relay.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shield.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils$InitialPosition.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils$TestCase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/box-take-home.iml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +66,7 @@
     <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Driver" />
       <module name="box-take-home" />
-      <option name="PROGRAM_PARAMETERS" value="-f test/BoxShogi_Test_Cases/captureOutOfCheck.in" />
+      <option name="PROGRAM_PARAMETERS" value="-f test/BoxShogi_Test_Cases/manyWaysOutOfCheck.in" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

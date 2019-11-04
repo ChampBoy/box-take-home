@@ -176,9 +176,10 @@ public class Game
                     this.end_game_for_current_player(last_move);
                     return;
                 }
+
+                end_piece.dePromote(); //handles case if not promoted already
                 //If end piece occupied by opponent then :
                 end_piece.change_teams();
-                end_piece.dePromote(); //handles case if not promoted already
                 current_player_move.capturePiece(end_piece);
                 get_other_player(current_player_move).remove_available(end_piece);
                 board.removePiece(final_p);
@@ -482,11 +483,30 @@ public class Game
                 }
             }
         }
+        for(Piece p :current_player_move.getCaptured())
+        {
+            for(int i=0;i<5;i++)
+            {
+                for(int j=0;j<5;j++)
+                {
+                    Position pos =new Position(i,j);
+                    if(!board.isOccupied(pos))
+                    {
+                        board.setPiece(pos,p);
+                        if(!isInCheck(current_player_move))
+                        {
+                            char c=Character.toLowerCase(p.toString().charAt(0));
+                            String str="drop "+c+" "+pos;
+                            save_moves.add(str);
+                        }
+                        board.removePiece(pos);
+                    }
+                }
+            }
+        }
         ArrayList<String> ans = new ArrayList<>(save_moves);
         Collections.sort(ans);
         return ans;
-
-
     }
     public Player get_other_player(Player pl)
     {
