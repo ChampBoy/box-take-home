@@ -43,10 +43,11 @@ public class Game
     {
         while(!isOver)
         {
-            System.out.println(this.board);
+            System.out.print(this.board);
             System.out.println("");
             upper.print_captured_list();
             lower.print_captured_list();
+            System.out.println("");
             if(isInCheck(current_player_move))
             {
                 System.out.println(current_player_move.getName()+" player is in check!");
@@ -54,19 +55,15 @@ public class Game
                 Set<String> avail_moves=create_and_print_available_moves();
                 if(avail_moves.size()==0)
                 {
-                    this.end_game_for_current_player(last_move);
+                    Player other_player = get_other_player(current_player_move);
+                    other_player.print_win_message("Checkmate.");
+                    this.setOver();
                     return;
                 }
-                System.out.println(avail_moves);
+
             }
             //print available moves here
-
-
-
-
-
-
-            System.out.println(current_player_move.getName()+">");
+            System.out.print(current_player_move.getName()+"> ");
             String input="";
             input=sc.nextLine();
             if(input.equals(" "))
@@ -75,6 +72,8 @@ public class Game
                 return;
             }
             last_move=input;
+            System.out.print((current_player_move).getName()+" player action: ");
+            System.out.println(last_move);
             String[] split = input.split(" ");
             if(split[0].equals("move"))
             {
@@ -87,7 +86,6 @@ public class Game
             }
             else
             {
-                System.out.println("Illegal command input");
                 this.end_game_for_current_player(last_move);
                 return;
             }
@@ -119,20 +117,17 @@ public class Game
 //        System.out.println(final_position);
         if(!board.isOnMap(initial_p) || !board.isOnMap(final_p))
         {
-            System.out.println("Illegal outside map");
             this.end_game_for_current_player(last_move);
             return;
         }
         if(!board.isOccupied(initial_p)) //or end
         {
-            System.out.println("Illegal piece not present");
             this.end_game_for_current_player(last_move);
             return;
         }
         Piece current_piece = board.getPiece(initial_p);
         if(!current_piece.belongsTo(current_player_move)) //If piece to be moved does not belong to current player then illegal
         {
-            System.out.println("piece does not belong to current player");
             this.end_game_for_current_player(last_move);
             return;
         }
@@ -168,7 +163,6 @@ public class Game
                 }
                 else
                 {
-                    System.out.println("Piece not in correct promotion row. Illegal Move.");
                     this.end_game_for_current_player(last_move);
                     return;
                 }
@@ -177,7 +171,6 @@ public class Game
             //if this move caused check on own player then IT IS ILLEGAL AND GAME OVER
             if(isInCheck(current_player_move))
             {
-                System.out.println("Player caused their own drive to go into check or did not do anything about check. Illegal Move");
                 this.end_game_for_current_player(last_move);
                 return;
             }
@@ -199,7 +192,6 @@ public class Game
         Position pos = new Position(split[2].charAt(0),Character.getNumericValue(split[2].charAt(1)));
         if(!board.isOnMap(pos) || board.isOccupied(pos))
         {
-            System.out.println("Trying to drop outside map or cell occupied");
             this.end_game_for_current_player(last_move);
             return;
         }
@@ -208,7 +200,6 @@ public class Game
         {
             if(current_player_move.piece_in_promote_row(pos)) //If trying to drop in promotion row
             {
-                System.out.println("Preview can not be dropped in promotion row");
                 this.end_game_for_current_player(last_move);
                 return;
             }
@@ -218,7 +209,6 @@ public class Game
                 Piece temp=board.getPiece(pos.getX(),temp_y);
                 if(temp!=null && temp.belongsTo(current_player_move)&& temp instanceof Preview && !temp.isPromoted())
                 {
-                    System.out.println("Preview can not be dropped in column with another preview");
                     this.end_game_for_current_player(last_move);
                     return;
                 }
@@ -230,7 +220,6 @@ public class Game
                 Piece temp=board.getPiece(pos.getX(),temp_y);
                 if(temp!=null && temp.belongsTo(current_player_move)&& temp instanceof Preview && !temp.isPromoted())
                 {
-                    System.out.println("Preview can not be dropped in column with another preview");
                     this.end_game_for_current_player(last_move);
                     return;
                 }
@@ -240,7 +229,6 @@ public class Game
             board.setPiece(pos,to_drop);
             if(isInCheck(current_player_move) && create_and_print_available_moves().size()==0)
             {
-                System.out.println("Preview can not be dropped causing immediate checkmate");
                 this.end_game_for_current_player(last_move);
                 return;
             }
@@ -280,19 +268,17 @@ public class Game
                 lower.capturePiece(p);
             }
             for(String move : temp.moves)
-            {
-                last_move=move;
-                if(!isOver) {
+            { last_move=move;
                     String[] split = move.split(" ");
                     if (split[0].equals("move")) {
-                        make_move(split);
-                        //continue from here
+                            make_move(split);
+                            //continue from here
                     }
                     else if(split[0].equals("drop"))
-                    {
-                        drop_move(split);
-                    }
-                    last_move=move;
+                        {
+                            drop_move(split);
+                        }
+                        last_move=move;
                     if(isOver)
                     {
                         return;
@@ -304,8 +290,6 @@ public class Game
                         this.setOver();
                     }
                     //move ends here
-                }
-
             }
             System.out.print(get_other_player(current_player_move).getName()+" player action: ");
             System.out.println(last_move);
@@ -313,6 +297,19 @@ public class Game
             upper.print_captured_list();
             lower.print_captured_list();
             System.out.println("");
+            if(isInCheck(current_player_move))
+            {
+                System.out.println(current_player_move.getName()+" player is in check!");
+                System.out.println("Available moves: ");
+                Set<String> avail_moves=create_and_print_available_moves();
+                if(avail_moves.size()==0)
+                {
+                    Player other_player = get_other_player(current_player_move);
+                    other_player.print_win_message("Checkmate.");
+                    this.setOver();
+                    return;
+                }
+            }
             System.out.println(current_player_move.getName()+">");
 
         }
@@ -438,6 +435,10 @@ public class Game
                 }
             }
         }
+        for(String s : save_moves)
+        {
+            System.out.println(s);
+        }
         return save_moves;
 
 
@@ -460,7 +461,7 @@ public class Game
         lower.print_captured_list();
         System.out.println("");
         Player other_player = get_other_player(current_player_move);
-        other_player.print_win_message("Illegal Move.");
+        other_player.print_win_message("Illegal move.");
         this.setOver();
     }
 }
