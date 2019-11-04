@@ -141,8 +141,8 @@ public class Game
 
             if(promote) //If trying to promote piece
             {
-                if(current_player_move.piece_in_promote_row(final_p) && current_piece.canBePromoted() && !current_piece.isPromoted())
-                {
+                if((current_player_move.piece_in_promote_row(final_p)||current_player_move.piece_in_promote_row(initial_p)) && current_piece.canBePromoted() && !current_piece.isPromoted())
+                {//Can be promoted if final or initial position in promoted row
                     current_piece.Promote();
                 }
                 else
@@ -151,10 +151,10 @@ public class Game
                     return;
                 }
             }
-//            if(current_player_move.piece_in_promote_row(final_p) && current_piece.canBePromoted() && !current_piece.isPromoted())
-//            {
-//                current_piece.Promote(); //Force promotion without mentioning promote
-//            }
+            if(current_player_move.piece_in_promote_row(final_p) && current_piece instanceof Preview && !current_piece.isPromoted())
+            {
+                current_piece.Promote(); //Force promotion without mentioning promote
+            }
             if(!board.isOccupied(final_p)) //if final position not occupied
             {
                 board.removePiece(initial_p);
