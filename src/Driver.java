@@ -23,8 +23,7 @@ public class Driver
                 return;
             }
             String filepath = args[1];
-            Game g= new Game(false,filepath); //Implement Later
-
+            Game g= new Game(false,filepath); 
         }
 
 

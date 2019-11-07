@@ -18,8 +18,8 @@ public class Game
         this.current_player_move=lower;
         if(interactive)
         {
-            this.board = new Board(true);
-            sc=new Scanner(System.in);
+            this.board = new Board(true); //board created with default initial pieces
+            sc=new Scanner(System.in); //activates scanner for user input
             this.run_game_interactive();
         }
         else
@@ -30,7 +30,7 @@ public class Game
 
 
     }
-    private void setOver()
+    private void setOver() //game mode is now over
     {
         this.isOver=true;
     }
@@ -48,16 +48,16 @@ public class Game
             upper.print_captured_list();
             lower.print_captured_list();
             System.out.println();
-            if(isInCheck())
+            if(isInCheck()) //check if current player is in check situation
             {
                 System.out.println(current_player_move.getName()+" player is in check!");
                 System.out.println("Available moves: ");
                 ArrayList<String> avail_moves= create_available_moves();
-                for(String s : avail_moves)
+                for(String s : avail_moves) //printing available moves
                 {
                     System.out.println(s);
                 }
-                if(avail_moves.size()==0)
+                if(avail_moves.size()==0) //If available moves=0 i.e Checkmate
                 {
                     Player other_player = get_other_player(current_player_move);
                     other_player.print_win_message("  Checkmate.");
@@ -74,15 +74,15 @@ public class Game
                 this.end_game_for_current_player(last_move);
                 return;
             }
-            last_move=input;
+            last_move=input; //Updating last move, for printing purposes
             System.out.print((current_player_move).getName()+" player action: ");
             System.out.println(last_move);
-            String[] split = input.split(" ");
-            if(split[0].equals("move"))
+            String[] split = input.split(" "); //splits user input to identify type of move and positions
+            if(split[0].equals("move") && split.length>2)
             {
                 make_move(split);
             }
-            else if(split[0].equals("drop"))
+            else if(split[0].equals("drop")&& split.length>2)
             {
                 drop_move(split);
             }
@@ -109,12 +109,12 @@ public class Game
         String final_position=split[2];
         Position initial_p = new Position(initial_position.charAt(0),Character.getNumericValue(initial_position.charAt(1)));
         Position final_p = new Position(final_position.charAt(0),Character.getNumericValue(final_position.charAt(1)));
-        if(!board.isOnMap(initial_p) || !board.isOnMap(final_p))
+        if(initial_p.equals(final_p)) //trying to move piece to same position
         {
-            this.end_game_for_current_player(last_move);
+             this.end_game_for_current_player(last_move);
             return;
         }
-        if(!board.isOccupied(initial_p)) //or end
+        if(!board.isOnMap(initial_p) || !board.isOnMap(final_p) || !board.isOccupied(initial_p)) //checks if move is on the map and initial position is not empty
         {
             this.end_game_for_current_player(last_move);
             return;
@@ -136,7 +136,7 @@ public class Game
                 }
                 else
                 {
-                    this.end_game_for_current_player(last_move);
+                    this.end_game_for_current_player(last_move); //illegal move,trying to promote in not promotable row
                     return;
                 }
             }
