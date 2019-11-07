@@ -140,7 +140,7 @@ public class Game
                     return;
                 }
             }
-            if(current_player_move.piece_in_promote_row(final_p) && current_piece instanceof Preview && !current_piece.isPromoted())
+            if(current_player_move.piece_in_promote_row(final_p) && current_piece instanceof Preview && !current_piece.isPromoted()) //Preview piece should be promoted forcibly if in promote row
             {
                 current_piece.Promote(); //Force promotion without mentioning promote
             }
