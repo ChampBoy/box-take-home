@@ -41,4 +41,8 @@ Future optimizations might include the following things :
 
 Creating a hashmap alone would create a huge difference in time if the game is expanded to
 a lot of blocks or lot more pieces.
+
+## Final Thoughts
+
+I Enjoyed working on this project, I hope it helps someone in the future :) 
  
